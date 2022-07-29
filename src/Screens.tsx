@@ -7,8 +7,6 @@ import {
 } from "@react-navigation/stack";
 import React from "react";
 import { StatusBar } from "react-native";
-import Tabs from "./navigation/tabs";
-import { OrderDelivery, Restaurant } from "./screens";
 import { useGetColor } from "./hooks";
 
 export type RootStackParamList = {
@@ -40,9 +38,9 @@ const Screens = () => {
         }}
         initialRouteName="Home"
       >
-        <RootStack.Screen name="Home" component={Tabs} />
-        <RootStack.Screen name="Restaurant" component={Restaurant} />
-        <RootStack.Screen name="OrderDelivery" component={OrderDelivery} />
+        {/* <RootStack.Screen name="Home" component={Tabs} /> */}
+        {/* <RootStack.Screen name="Restaurant" component={Restaurant} /> */}
+        {/* <RootStack.Screen name="OrderDelivery" component={OrderDelivery} /> */}
       </RootStack.Navigator>
     </NavigationContainer>
   );
