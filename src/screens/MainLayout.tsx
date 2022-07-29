@@ -7,12 +7,15 @@ import {
 } from "@react-navigation/stack";
 import React from "react";
 import { StatusBar } from "react-native";
-import { useGetColor } from "./hooks";
+import { Home } from ".";
+import { useGetColor } from "../hooks";
 
 export type RootStackParamList = {
   Home: undefined;
-  Restaurant: undefined;
-  OrderDelivery: undefined;
+  Favourite: undefined;
+  Cart: undefined;
+  Notification: undefined;
+  Search: undefined;
 };
 
 // for useNavigation
@@ -23,7 +26,7 @@ export type RootStackScreenProps<T extends keyof RootStackParamList> =
 
 const RootStack = createStackNavigator<RootStackParamList>();
 
-const Screens = () => {
+const MainLayout = () => {
   return (
     <NavigationContainer>
       <StatusBar backgroundColor={useGetColor("primary")} />
@@ -38,7 +41,7 @@ const Screens = () => {
         }}
         initialRouteName="Home"
       >
-        {/* <RootStack.Screen name="Home" component={Tabs} /> */}
+        <RootStack.Screen name="Home" component={Home} />
         {/* <RootStack.Screen name="Restaurant" component={Restaurant} /> */}
         {/* <RootStack.Screen name="OrderDelivery" component={OrderDelivery} /> */}
       </RootStack.Navigator>
@@ -46,4 +49,4 @@ const Screens = () => {
   );
 };
 
-export default Screens;
+export default MainLayout;

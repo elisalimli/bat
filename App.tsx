@@ -1,7 +1,7 @@
 import { Text } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { useCachedResources } from "./src/hooks";
-import Main from "./src/Screens";
+import MainLayout from "./src/screens/MainLayout";
 import { tw } from "./src/utils";
 
 export default function App() {
@@ -12,8 +12,8 @@ export default function App() {
   } else {
     return (
       <SafeAreaProvider>
-        {/* <Main /> */}
-        <Text style={tw`text-primary text-2xl`}>Hello world</Text>
+        <MainLayout />
+        {/* <Text style={tw`text-primary text-2xl`}>Hello2 world</Text> */}
       </SafeAreaProvider>
     );
   }
