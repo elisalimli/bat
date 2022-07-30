@@ -20,19 +20,19 @@ export default function useCachedResources() {
           "extra-bold": require("../../assets/fonts/Poppins-ExtraBold.ttf"),
           "extra-bold-italic": require("../../assets/fonts/Poppins-ExtraBoldItalic.ttf"),
           bold: require("../../assets/fonts/Poppins-Bold.ttf"),
-          boldItalic: require("../../assets/fonts/Poppins-BoldItalic.ttf"),
+          "bold-italic": require("../../assets/fonts/Poppins-BoldItalic.ttf"),
           "semi-bold": require("../../assets/fonts/Poppins-SemiBold.ttf"),
           "semi-bold-italic": require("../../assets/fonts/Poppins-SemiBoldItalic.ttf"),
           medium: require("../../assets/fonts/Poppins-Medium.ttf"),
           mediumItalic: require("../../assets/fonts/Poppins-MediumItalic.ttf"),
           regular: require("../../assets/fonts/Poppins-Regular.ttf"),
           light: require("../../assets/fonts/Poppins-Light.ttf"),
-          lightItalic: require("../../assets/fonts/Poppins-LightItalic.ttf"),
+          "light-italic": require("../../assets/fonts/Poppins-LightItalic.ttf"),
           italic: require("../../assets/fonts/Poppins-Italic.ttf"),
           "extra-light": require("../../assets/fonts/Poppins-ExtraLight.ttf"),
           "extra-light-italic": require("../../assets/fonts/Poppins-ExtraLightItalic.ttf"),
           thin: require("../../assets/fonts/Poppins-Thin.ttf"),
-          thinItalic: require("../../assets/fonts/Poppins-ThinItalic.ttf"),
+          "thin-italic": require("../../assets/fonts/Poppins-ThinItalic.ttf"),
         });
       } catch (e) {
         // We might want to provide this error information to an error reporting service
