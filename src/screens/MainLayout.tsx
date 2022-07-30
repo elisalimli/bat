@@ -9,6 +9,7 @@ import React from "react";
 import { StatusBar } from "react-native";
 import { Home } from ".";
 import { useGetColor } from "../hooks";
+import CustomDrawer from "../navigation/CustomDrawer";
 
 export type RootStackParamList = {
   Home: undefined;
@@ -41,7 +42,7 @@ const MainLayout = () => {
         }}
         initialRouteName="Home"
       >
-        <RootStack.Screen name="Home" component={Home} />
+        <RootStack.Screen name="Home" component={CustomDrawer} />
         {/* <RootStack.Screen name="Restaurant" component={Restaurant} /> */}
         {/* <RootStack.Screen name="OrderDelivery" component={OrderDelivery} /> */}
       </RootStack.Navigator>
