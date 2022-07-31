@@ -3,19 +3,25 @@ import {
   DrawerContentScrollView,
   DrawerItem,
   DrawerItemList,
+  useDrawerProgress,
 } from "@react-navigation/drawer";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Image, Text, View } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import Animated, {
+  Extrapolation,
+  interpolate,
+  useAnimatedStyle,
+} from "react-native-reanimated";
 import { constants, icons, images } from "../../constants";
 import { tw } from "../utils";
 import CustomDrawerItem from "./CustomDrawerItem";
 
 const CustomDrawerContent: React.FC<DrawerContentComponentProps> = (props) => {
   const { navigation } = props;
-  console.log("pprops content", props);
+
   return (
-    <DrawerContentScrollView {...props} contentContainerStyle={tw`flex-1`}>
+    <DrawerContentScrollView {...props}>
       {/* <DrawerItemList {...props} /> */}
       <View style={tw`pl-4 flex-1`}>
         <View>

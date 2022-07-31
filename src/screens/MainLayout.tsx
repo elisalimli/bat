@@ -1,14 +1,15 @@
+import { useDrawerProgress } from "@react-navigation/drawer";
 import React from "react";
-import { Text, View, StyleSheet, Linking } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { Text, View } from "react-native";
+import Animated from "react-native-reanimated";
 import { tw } from "../utils";
 
 interface MainLayoutProps {}
 
-const MainLayout: React.FC<MainLayoutProps> = (props) => {
+const MainLayout: React.FC<MainLayoutProps> = () => {
   return (
-    <View style={tw`bg-white flex-1`}>
-      <Text>MainLayout</Text>
+    <View>
+      <Text>MainLayou2t</Text>
     </View>
   );
 };
