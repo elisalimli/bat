@@ -10,6 +10,20 @@ interface CustomDrawerContentProps {}
 
 const Drawer = createDrawerNavigator();
 
+// contentComponent: (props) => (
+//   <View style={styles.sidebar}>
+//     <ScrollView>
+//       <DrawerItems
+//         {...props}
+//         getLabel = {(scene) => (
+//           <View style={styles.button}>
+//             <Text style={styles.buttonText}>{props.getLabel(scene)}</Text>
+//           </View>
+//         )}
+//       />
+//       </ScrollView>
+//     </View>
+//   )
 const CustomDrawer = (props: CustomDrawerContentProps) => {
   return (
     <View style={tw`flex-1 bg-primary`}>

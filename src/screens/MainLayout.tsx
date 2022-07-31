@@ -7,7 +7,7 @@ interface MainLayoutProps {}
 
 const MainLayout: React.FC<MainLayoutProps> = (props) => {
   return (
-    <View>
+    <View style={tw`bg-white flex-1`}>
       <Text>MainLayout</Text>
     </View>
   );

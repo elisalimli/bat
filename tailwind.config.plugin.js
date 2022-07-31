@@ -10,7 +10,7 @@ module.exports = {
         h1: `font-black text-2xl`,
         h2: `font-bold text-xl`,
         h3: `font-bold text-lg`,
-        h4: `font-bold`,
+        h4: `font-semibold`,
         body1: `font-regular text-3xl`,
         body2: `font-regular text-xl`,
         body3: `font-regular text-base`,
