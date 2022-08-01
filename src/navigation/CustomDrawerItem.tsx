@@ -1,23 +1,26 @@
-import {
-  DrawerContentComponentProps,
-  DrawerContentScrollView,
-  DrawerItem,
-  DrawerItemList,
-} from "@react-navigation/drawer";
 import React from "react";
-import { Image, ImageSourcePropType, Text, View } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
-import { icons, images } from "../../constants";
+import {
+  Image,
+  ImageSourcePropType,
+  Text,
+  TouchableOpacity,
+  TouchableOpacityProps,
+} from "react-native";
 import { tw } from "../utils";
 
-interface CustomDrawerItemProps {
+type CustomDrawerItemProps = {
   icon: ImageSourcePropType;
   label: string;
-}
+} & TouchableOpacityProps;
 
-const CustomDrawerItem: React.FC<CustomDrawerItemProps> = ({ icon, label }) => {
+const CustomDrawerItem: React.FC<CustomDrawerItemProps> = ({
+  icon,
+  label,
+  style,
+  ...props
+}) => {
   return (
-    <TouchableOpacity style={tw`flex-row  items-center h-11`}>
+    <TouchableOpacity {...props} style={[tw`flex-row  items-center h-11`]}>
       <Image source={icon} style={tw`w-5 h-5 mr-4 tint-white`} />
 
       <Text style={tw`h4 text-white`}>{label}</Text>

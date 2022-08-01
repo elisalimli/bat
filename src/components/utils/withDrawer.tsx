@@ -1,7 +1,9 @@
 import { useDrawerProgress } from "@react-navigation/drawer";
 import Animated, { interpolateNode } from "react-native-reanimated";
+import { WINDOW } from "../../../constants";
 import { tw } from "../../utils";
 
+// drawer scale and border radius animation
 export default function withDrawer(WrappedComponent: React.FC) {
   const HOC = () => {
     const progress = useDrawerProgress();
@@ -13,7 +15,7 @@ export default function withDrawer(WrappedComponent: React.FC) {
 
     const borderRadius = interpolateNode(progress as any, {
       inputRange: [0, 1],
-      outputRange: [0, 100],
+      outputRange: [0, WINDOW.width * 0.25],
     });
 
     return (

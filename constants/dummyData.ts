@@ -1,7 +1,8 @@
-import { icons, images } from ".";
+import icons from "./icons";
+import images from "./images";
 
 const myProfile = {
-  name: "ByProgrammers",
+  name: "Ali Salimli",
   profile_image: images.profile,
   address: "No. 88, Jln Padungan, Kuching",
 };

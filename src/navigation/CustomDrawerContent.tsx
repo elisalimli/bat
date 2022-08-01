@@ -13,7 +13,7 @@ import Animated, {
   interpolate,
   useAnimatedStyle,
 } from "react-native-reanimated";
-import { constants, icons, images } from "../../constants";
+import { constants, dummyData, icons, images } from "../../constants";
 import { tw } from "../utils";
 import CustomDrawerItem from "./CustomDrawerItem";
 
@@ -38,7 +38,9 @@ const CustomDrawerContent: React.FC<DrawerContentComponentProps> = (props) => {
             <View style={tw`flex-row`}>
               <Image source={images.profile} style={tw`w-12 h-12 rounded-xl`} />
               <View style={tw`ml-3`}>
-                <Text style={tw`h2 text-white2 font-medium`}>Ali Salimli</Text>
+                <Text style={tw`h2 text-white2 font-medium`}>
+                  {dummyData.myProfile.name}
+                </Text>
                 <Text style={tw`text-white body4`}>View your profile</Text>
               </View>
             </View>
