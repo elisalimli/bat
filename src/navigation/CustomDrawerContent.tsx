@@ -1,24 +1,17 @@
 import {
   DrawerContentComponentProps,
   DrawerContentScrollView,
-  DrawerItem,
-  DrawerItemList,
-  useDrawerProgress,
 } from "@react-navigation/drawer";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Image, Text, View } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import Animated, {
-  Extrapolation,
-  interpolate,
-  useAnimatedStyle,
-} from "react-native-reanimated";
 import { constants, dummyData, icons, images } from "../../constants";
 import { tw } from "../utils";
 import CustomDrawerItem from "./CustomDrawerItem";
 
 const CustomDrawerContent: React.FC<DrawerContentComponentProps> = (props) => {
   const { navigation } = props;
+  const { DRAWER_SCREENS } = constants;
 
   return (
     <DrawerContentScrollView {...props}>
@@ -47,27 +40,42 @@ const CustomDrawerContent: React.FC<DrawerContentComponentProps> = (props) => {
           </TouchableOpacity>
         </View>
         {/* Drawer Items(Screens) */}
-        <View style={tw`mt-12 ml-4 flex-1`}>
+        <View style={tw`mt-12 ml-2 flex-1`}>
           {/* @todo maybe loop through this??? */}
-          <CustomDrawerItem label={constants.screens.home} icon={icons.home} />
+          <CustomDrawerItem label={DRAWER_SCREENS.HOME} icon={icons.home} />
           <CustomDrawerItem
-            label={constants.screens.my_wallet}
+            label={DRAWER_SCREENS.MY_WALLET}
             icon={icons.wallet}
           />
           <CustomDrawerItem
-            label={constants.screens.notification}
+            label={DRAWER_SCREENS.NOTIFICATION}
             icon={icons.notification}
           />
           <CustomDrawerItem
-            label={constants.screens.favourite}
+            label={DRAWER_SCREENS.FAVOURITE}
             icon={icons.favourite}
           />
           <View style={tw`my-4 h-px w-full bg-lightGray1`}></View>
-          <CustomDrawerItem label="Track Your Order" icon={icons.location} />
-          <CustomDrawerItem label="Coupons" icon={icons.coupon} />
-          <CustomDrawerItem label="Settings" icon={icons.setting} />
-          <CustomDrawerItem label="Invite a friend" icon={icons.profile} />
-          <CustomDrawerItem label="Help center" icon={icons.help} />
+          <CustomDrawerItem
+            label={DRAWER_SCREENS.TRACK_YOUR_ORDER}
+            icon={icons.location}
+          />
+          <CustomDrawerItem
+            label={DRAWER_SCREENS.COUPONS}
+            icon={icons.coupon}
+          />
+          <CustomDrawerItem
+            label={DRAWER_SCREENS.SETTINGS}
+            icon={icons.setting}
+          />
+          <CustomDrawerItem
+            label={DRAWER_SCREENS.MY_WALLET}
+            icon={icons.profile}
+          />
+          <CustomDrawerItem
+            label={DRAWER_SCREENS.HELP_CENTER}
+            icon={icons.help}
+          />
         </View>
         <View style={tw`px-4 py-8`}>
           <CustomDrawerItem label="Logout" icon={icons.logout} />

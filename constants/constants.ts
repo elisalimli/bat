@@ -8,6 +8,19 @@ const screens = {
   my_wallet: "My Wallet",
 };
 
+// @todo find a better way
+enum DRAWER_SCREENS {
+  HOME = "Home",
+  MY_WALLET = "My Wallet",
+  NOTIFICATION = "Notification",
+  FAVOURITE = "Favourite",
+  TRACK_YOUR_ORDER = "Track Your Order",
+  COUPONS = "Coupons",
+  SETTINGS = "Settings",
+  INVITE_FRIEND = "Invite a friend",
+  HELP_CENTER = "Help Center",
+}
+
 const bottom_tabs = [
   {
     id: 0,
@@ -109,5 +122,7 @@ export default {
   bottom_tabs,
   delivery_time,
   ratings,
+
   tags,
+  DRAWER_SCREENS,
 };

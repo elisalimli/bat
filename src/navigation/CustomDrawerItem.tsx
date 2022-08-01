@@ -6,6 +6,8 @@ import {
   TouchableOpacity,
   TouchableOpacityProps,
 } from "react-native";
+import { useGetColor } from "../hooks";
+import { useDrawerStore } from "../store";
 import { tw } from "../utils";
 
 type CustomDrawerItemProps = {
@@ -19,8 +21,22 @@ const CustomDrawerItem: React.FC<CustomDrawerItemProps> = ({
   style,
   ...props
 }) => {
+  const { selectedTab, setSelectedTab } = useDrawerStore();
+  const isFocused = selectedTab === label;
+  const handlePress = () => {
+    setSelectedTab(label);
+  };
   return (
-    <TouchableOpacity {...props} style={[tw`flex-row  items-center h-11`]}>
+    <TouchableOpacity
+      {...props}
+      style={[
+        tw`flex-row items-center h-11 rounded-2xl py-2 px-4`,
+        {
+          backgroundColor: isFocused ? useGetColor("transparentBlack1") : null,
+        },
+      ]}
+      onPress={handlePress}
+    >
       <Image source={icon} style={tw`w-5 h-5 mr-4 tint-white`} />
 
       <Text style={tw`h4 text-white`}>{label}</Text>
