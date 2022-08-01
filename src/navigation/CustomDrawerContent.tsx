@@ -29,7 +29,10 @@ const CustomDrawerContent: React.FC<DrawerContentComponentProps> = (props) => {
           {/* Profile */}
           <TouchableOpacity style={tw`mt-8`}>
             <View style={tw`flex-row`}>
-              <Image source={images.profile} style={tw`w-12 h-12 rounded-xl`} />
+              <Image
+                source={dummyData.myProfile.profile_image}
+                style={tw`w-12 h-12 rounded-xl`}
+              />
               <View style={tw`ml-3`}>
                 <Text style={tw`h2 text-white2 font-medium`}>
                   {dummyData.myProfile.name}

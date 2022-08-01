@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import {
   Image,
@@ -23,8 +24,11 @@ const CustomDrawerItem: React.FC<CustomDrawerItemProps> = ({
 }) => {
   const { selectedTab, setSelectedTab } = useDrawerStore();
   const isFocused = selectedTab === label;
+  const { navigate } = useNavigation();
+
   const handlePress = () => {
     setSelectedTab(label);
+    navigate("MainLayout");
   };
   return (
     <TouchableOpacity

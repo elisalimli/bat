@@ -28,6 +28,7 @@ const Drawer = createDrawerNavigator();
 //       </ScrollView>
 //     </View>
 //   )
+
 const CustomDrawer = (props: CustomDrawerContentProps) => {
   return (
     <View style={tw`flex-1 bg-primary`}>
