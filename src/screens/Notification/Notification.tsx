@@ -1,13 +1,12 @@
-import React from 'react';
-import {
-    View,
-} from 'react-native';
+import React from "react";
+import { Text, View } from "react-native";
 
 const Notification = () => {
-    return (
-        <View>
-        </View>
-    )
-}
+  return (
+    <View>
+      <Text>noti</Text>
+    </View>
+  );
+};
 
 export default Notification;

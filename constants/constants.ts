@@ -1,15 +1,17 @@
+import icons from "./icons";
+
 const screens = {
   main_layout: "MainLayout",
   home: "Home",
   search: "Search",
   cart: "Cart",
   favourite: "Favourite",
-  notification: "Notification",
+  notification: "Notion",
   my_wallet: "My Wallet",
 };
 
 // @todo find a better way
-enum DRAWER_SCREENS {
+export enum DRAWER_SCREENS {
   HOME = "Home",
   MY_WALLET = "My Wallet",
   NOTIFICATION = "Notification",
@@ -25,22 +27,27 @@ const bottom_tabs = [
   {
     id: 0,
     label: screens.home,
+    icon: icons.home,
   },
   {
     id: 1,
     label: screens.search,
+    icon: icons.search,
   },
   {
     id: 2,
     label: screens.cart,
+    icon: icons.coupon,
   },
   {
     id: 3,
     label: screens.favourite,
+    icon: icons.favourite,
   },
   {
     id: 4,
     label: screens.notification,
+    icon: icons.notification,
   },
 ];
 
@@ -124,5 +131,4 @@ export default {
   ratings,
 
   tags,
-  DRAWER_SCREENS,
 };

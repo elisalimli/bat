@@ -25,9 +25,7 @@ const Header = () => {
       </TouchableOpacity>
       {/* Screen name */}
       <View>
-        <Text style={tw`body2 font-semi-bold`}>
-          {selectedTab.toUpperCase()}
-        </Text>
+        <Text style={tw`body2`}>{selectedTab.toUpperCase()}</Text>
       </View>
       {/* Profile image */}
       <View>

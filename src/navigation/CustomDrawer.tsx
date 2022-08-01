@@ -1,35 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { Text, View, StyleSheet, Animated } from "react-native";
-import { Favourite, Home } from "../screens";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import React from "react";
+import { Settings, View } from "react-native";
+import { Home, Notification } from "../screens";
 import { tw } from "../utils";
-import {
-  createDrawerNavigator,
-  useDrawerProgress,
-} from "@react-navigation/drawer";
 import CustomDrawerContent from "./CustomDrawerContent";
-import MainLayout from "../screens/MainLayout";
-import { useAnimatedStyle, interpolate } from "react-native-reanimated";
-
-interface CustomDrawerContentProps {}
+import MainLayoutTabs from "./MainLayoutTabs";
 
 const Drawer = createDrawerNavigator();
 
-// contentComponent: (props) => (
-//   <View style={styles.sidebar}>
-//     <ScrollView>
-//       <DrawerItems
-//         {...props}
-//         getLabel = {(scene) => (
-//           <View style={styles.button}>
-//             <Text style={styles.buttonText}>{props.getLabel(scene)}</Text>
-//           </View>
-//         )}
-//       />
-//       </ScrollView>
-//     </View>
-//   )
-
-const CustomDrawer = (props: CustomDrawerContentProps) => {
+const CustomDrawer = () => {
   return (
     <View style={tw`flex-1 bg-primary`}>
       <Drawer.Navigator
@@ -47,7 +26,8 @@ const CustomDrawer = (props: CustomDrawerContentProps) => {
         // drawerContent={(prop) => <CustomDrawerContent {...prop} />}
         initialRouteName="Home"
       >
-        <Drawer.Screen name="MainLayout" component={MainLayout}></Drawer.Screen>
+        <Drawer.Screen name="Home" component={Home} />
+        <Drawer.Screen name="Notification" component={Notification} />
       </Drawer.Navigator>
     </View>
   );

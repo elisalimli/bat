@@ -6,12 +6,12 @@ import React from "react";
 import { Image, Text, View } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { constants, dummyData, icons, images } from "../../constants";
+import { DRAWER_SCREENS } from "../../constants/constants";
 import { tw } from "../utils";
 import CustomDrawerItem from "./CustomDrawerItem";
 
 const CustomDrawerContent: React.FC<DrawerContentComponentProps> = (props) => {
   const { navigation } = props;
-  const { DRAWER_SCREENS } = constants;
 
   return (
     <DrawerContentScrollView {...props}>

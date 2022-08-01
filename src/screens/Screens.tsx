@@ -12,12 +12,12 @@ import { useGetColor } from "../hooks";
 import CustomDrawer from "../navigation/CustomDrawer";
 
 export type RootStackParamList = {
-  Drawer: undefined;
-  Home: undefined;
-  Favourite: undefined;
-  Cart: undefined;
-  Notification: undefined;
-  Search: undefined;
+  MainLayout: undefined;
+  // Home: undefined;
+  // Favourite: undefined;
+  // Cart: undefined;
+  // Notification: undefined;
+  // Search: undefined;
 };
 
 // for useNavigation
@@ -41,9 +41,9 @@ const Screens = () => {
           headerShown: false,
           //   headerBackImage: () => <Text style={tw` text-blue-500`}>back</Text>,
         }}
-        initialRouteName="Home"
+        initialRouteName="MainLayout"
       >
-        <RootStack.Screen name="Home" component={CustomDrawer} />
+        <RootStack.Screen name="MainLayout" component={CustomDrawer} />
         {/* <RootStack.Screen name="Restaurant" component={Restaurant} /> */}
         {/* <RootStack.Screen name="OrderDelivery" component={OrderDelivery} /> */}
       </RootStack.Navigator>
