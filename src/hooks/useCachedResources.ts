@@ -24,7 +24,7 @@ export default function useCachedResources() {
           "semi-bold": require("../../assets/fonts/Poppins-SemiBold.ttf"),
           "semi-bold-italic": require("../../assets/fonts/Poppins-SemiBoldItalic.ttf"),
           medium: require("../../assets/fonts/Poppins-Medium.ttf"),
-          mediumItalic: require("../../assets/fonts/Poppins-MediumItalic.ttf"),
+          "medium-italic": require("../../assets/fonts/Poppins-MediumItalic.ttf"),
           regular: require("../../assets/fonts/Poppins-Regular.ttf"),
           light: require("../../assets/fonts/Poppins-Light.ttf"),
           "light-italic": require("../../assets/fonts/Poppins-LightItalic.ttf"),
