@@ -18,9 +18,17 @@ export default function withDrawer(WrappedComponent: React.FC) {
       outputRange: [0, WINDOW.width * 0.25],
     });
 
+    const padding = interpolateNode(progress as any, {
+      inputRange: [0, 1],
+      outputRange: [0, WINDOW.width * 0.05],
+    });
+
     return (
       <Animated.View
-        style={[tw`bg-white flex-1`, { borderRadius, transform: [{ scale }] }]}
+        style={[
+          tw`bg-white flex-1`,
+          { borderRadius, padding, transform: [{ scale }] },
+        ]}
       >
         <WrappedComponent />
       </Animated.View>

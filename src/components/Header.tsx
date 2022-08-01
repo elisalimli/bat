@@ -29,6 +29,7 @@ const Header = () => {
           {selectedTab.toUpperCase()}
         </Text>
       </View>
+      {/* Profile image */}
       <View>
         <Image
           source={dummyData.myProfile.profile_image}
