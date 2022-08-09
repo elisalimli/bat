@@ -1,10 +1,10 @@
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import React from "react";
-import { Settings, View } from "react-native";
+import { View } from "react-native";
 import { Home, Notification } from "../screens";
 import { tw } from "../utils";
 import CustomDrawerContent from "./CustomDrawerContent";
-import MainLayoutTabs from "./MainLayoutTabs";
+import Tabs from "./tabs";
 
 const Drawer = createDrawerNavigator();
 
@@ -26,8 +26,7 @@ const CustomDrawer = () => {
         // drawerContent={(prop) => <CustomDrawerContent {...prop} />}
         initialRouteName="Home"
       >
-        <Drawer.Screen name="Home" component={Home} />
-        <Drawer.Screen name="Notification" component={Notification} />
+        <Drawer.Screen name="Tabs" component={Tabs} />
       </Drawer.Navigator>
     </View>
   );

@@ -10,6 +10,7 @@ import { StatusBar } from "react-native";
 import { Home } from ".";
 import { useGetColor } from "../hooks";
 import CustomDrawer from "../navigation/CustomDrawer";
+import MainLayoutTabs from "./MainLayoutTabs";
 
 export type RootStackParamList = {
   MainLayout: undefined;
@@ -43,7 +44,7 @@ const Screens = () => {
         }}
         initialRouteName="MainLayout"
       >
-        <RootStack.Screen name="MainLayout" component={CustomDrawer} />
+        <RootStack.Screen name="CustomDrawer" component={CustomDrawer} />
         {/* <RootStack.Screen name="Restaurant" component={Restaurant} /> */}
         {/* <RootStack.Screen name="OrderDelivery" component={OrderDelivery} /> */}
       </RootStack.Navigator>
