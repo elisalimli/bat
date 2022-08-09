@@ -3,7 +3,8 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import { useCachedResources } from "./src/hooks";
 import Screens from "./src/screens/Screens";
 import { tw } from "./src/utils";
-//test
+//test2
+
 export default function App() {
   const isLoadingComplete = useCachedResources();
 
