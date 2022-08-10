@@ -1,7 +1,12 @@
 import { BottomTabBarButtonProps } from "@react-navigation/bottom-tabs";
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
-import { Text, TouchableOpacity, View } from "react-native";
+import {
+  GestureResponderEvent,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { Path, Svg } from "react-native-svg";
 import { DRAWER_SCREENS } from "../../constants/constants";
 import { useGetColor } from "../hooks";
@@ -14,7 +19,7 @@ const TabBarCustomButton: React.FC<BottomTabBarButtonProps> = (props) => {
   const navigation = useNavigation();
   const { selectedTab, setSelectedTab } = useDrawerStore();
 
-  const handlePress = (e) => {
+  const handlePress = (e: GestureResponderEvent) => {
     if (onPress) onPress(e);
 
     const { index, routeNames } = navigation.getState();
