@@ -9,14 +9,19 @@ import React from "react";
 import { StatusBar } from "react-native";
 import { useGetColor } from "../hooks";
 import CustomDrawer from "../navigation/CustomDrawer";
+import useAuthStore from "../store/useAuthStore";
+import { ForgotPassword, OnBoarding, Otp, SignIn, SignUp } from "./AuthLayout";
 
 export type RootStackParamList = {
-  CustomDrawer: undefined;
-  // Home: undefined;
-  // Favourite: undefined;
-  // Cart: undefined;
-  // Notification: undefined;
-  // Search: undefined;
+  MainLayout: undefined;
+} & AuthStackParamList;
+
+export type AuthStackParamList = {
+  OnBoarding: undefined;
+  SignIn: undefined;
+  SignUp: undefined;
+  ForgotPassword: undefined;
+  Otp: undefined;
 };
 
 // for useNavigation
@@ -25,9 +30,10 @@ export type RootStackNavigationProps = StackNavigationProp<RootStackParamList>;
 export type RootStackScreenProps<T extends keyof RootStackParamList> =
   NativeStackScreenProps<RootStackParamList, T>;
 
-const RootStack = createStackNavigator<RootStackParamList>();
+export const RootStack = createStackNavigator<RootStackParamList>();
 
 const Screens = () => {
+  const { auth } = useAuthStore();
   return (
     <NavigationContainer>
       <StatusBar backgroundColor={useGetColor("primary")} />
@@ -40,11 +46,26 @@ const Screens = () => {
           headerShown: false,
           //   headerBackImage: () => <Text style={tw` text-blue-500`}>back</Text>,
         }}
-        initialRouteName="CustomDrawer"
+        initialRouteName="MainLayout"
       >
-        <RootStack.Screen name="CustomDrawer" component={CustomDrawer} />
-        {/* <RootStack.Screen name="Restaurant" component={Restaurant} /> */}
-        {/* <RootStack.Screen name="OrderDelivery" component={OrderDelivery} /> */}
+        {auth ? (
+          <RootStack.Screen name="MainLayout" component={CustomDrawer} />
+        ) : (
+          <RootStack.Group>
+            <RootStack.Screen name="OnBoarding" component={OnBoarding} />
+
+            <RootStack.Screen name="SignIn" component={SignIn} />
+
+            <RootStack.Screen name="SignUp" component={SignUp} />
+
+            <RootStack.Screen
+              name="ForgotPassword"
+              component={ForgotPassword}
+            />
+
+            <RootStack.Screen name="Otp" component={Otp} />
+          </RootStack.Group>
+        )}
       </RootStack.Navigator>
     </NavigationContainer>
   );

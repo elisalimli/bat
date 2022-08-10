@@ -25,6 +25,22 @@ const categories = [
   },
 ];
 
+export interface IFood {
+  id: number;
+  name: string;
+  description: string;
+  categories: number[];
+  price: number;
+  calories: number;
+  isFavourite: boolean;
+  image: any;
+}
+export interface IMenu {
+  id: number;
+  name: string;
+  list: IFood[];
+}
+
 const hamburger = {
   id: 1,
   name: "Hamburger",

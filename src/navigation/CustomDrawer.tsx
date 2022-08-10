@@ -1,7 +1,9 @@
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import React from "react";
 import { View } from "react-native";
+import { DRAWER_SCREENS } from "../../constants/constants";
 import { Home, Notification } from "../screens";
+import Settings from "../screens/Settings/Settings";
 import { tw } from "../utils";
 import CustomDrawerContent from "./CustomDrawerContent";
 import Tabs from "./tabs";
@@ -27,6 +29,7 @@ const CustomDrawer = () => {
         initialRouteName="Home"
       >
         <Drawer.Screen name="Tabs" component={Tabs} />
+        <Drawer.Screen name={DRAWER_SCREENS.SETTINGS} component={Settings} />
       </Drawer.Navigator>
     </View>
   );
