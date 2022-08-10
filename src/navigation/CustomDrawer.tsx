@@ -10,7 +10,7 @@ const Drawer = createDrawerNavigator();
 
 const CustomDrawer = () => {
   return (
-    <View style={tw`flex-1 bg-primary`}>
+    <View style={tw`flex-1`}>
       <Drawer.Navigator
         // for animation @todo find a better way(check reanimated 2 implementation??)
         useLegacyImplementation
@@ -20,7 +20,7 @@ const CustomDrawer = () => {
           drawerType: "slide",
           // for removing shadown
           overlayColor: "transparent",
-          drawerStyle: tw`w-4/6 pr-5 flex-1 bg-transparent`,
+          drawerStyle: tw`w-4/6 pr-5 flex-1 bg-primary`,
           sceneContainerStyle: tw`bg-transparent`,
         }}
         // drawerContent={(prop) => <CustomDrawerContent {...prop} />}
