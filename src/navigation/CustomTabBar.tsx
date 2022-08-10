@@ -1,7 +1,7 @@
 import { BottomTabBar, BottomTabBarProps } from "@react-navigation/bottom-tabs";
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
-import { Text, View } from "react-native";
-import { tw } from "../utils";
+import { View } from "react-native";
 
 const CustomTabBar: React.FC<{ props: BottomTabBarProps }> = (props) => {
   return (

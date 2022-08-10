@@ -13,6 +13,7 @@ const screens = {
 // @todo find a better way
 export enum DRAWER_SCREENS {
   HOME = "Home",
+  SEARCH = "Search",
   MY_WALLET = "My Wallet",
   NOTIFICATION = "Notification",
   FAVOURITE = "Favourite",

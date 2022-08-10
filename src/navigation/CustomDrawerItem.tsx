@@ -28,7 +28,7 @@ const CustomDrawerItem: React.FC<CustomDrawerItemProps> = ({
 
   const handlePress = () => {
     setSelectedTab(label);
-    navigate("MainLayout");
+    navigate(label);
   };
   return (
     <TouchableOpacity

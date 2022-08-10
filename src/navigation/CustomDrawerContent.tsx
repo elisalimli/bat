@@ -46,9 +46,10 @@ const CustomDrawerContent: React.FC<DrawerContentComponentProps> = (props) => {
         <View style={tw`mt-12 ml-2 flex-1`}>
           {/* @todo maybe loop through this??? */}
           <CustomDrawerItem label={DRAWER_SCREENS.HOME} icon={icons.home} />
+          <CustomDrawerItem label={DRAWER_SCREENS.SEARCH} icon={icons.search} />
           <CustomDrawerItem
-            label={DRAWER_SCREENS.MY_WALLET}
-            icon={icons.wallet}
+            label={DRAWER_SCREENS.COUPONS}
+            icon={icons.coupon}
           />
           <CustomDrawerItem
             label={DRAWER_SCREENS.NOTIFICATION}
@@ -64,17 +65,14 @@ const CustomDrawerContent: React.FC<DrawerContentComponentProps> = (props) => {
             icon={icons.location}
           />
           <CustomDrawerItem
-            label={DRAWER_SCREENS.COUPONS}
-            icon={icons.coupon}
+            label={DRAWER_SCREENS.MY_WALLET}
+            icon={icons.wallet}
           />
           <CustomDrawerItem
             label={DRAWER_SCREENS.SETTINGS}
             icon={icons.setting}
           />
-          <CustomDrawerItem
-            label={DRAWER_SCREENS.MY_WALLET}
-            icon={icons.profile}
-          />
+
           <CustomDrawerItem
             label={DRAWER_SCREENS.HELP_CENTER}
             icon={icons.help}

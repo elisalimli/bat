@@ -7,13 +7,11 @@ import {
 } from "@react-navigation/stack";
 import React from "react";
 import { StatusBar } from "react-native";
-import { Home } from ".";
 import { useGetColor } from "../hooks";
 import CustomDrawer from "../navigation/CustomDrawer";
-import MainLayoutTabs from "./MainLayoutTabs";
 
 export type RootStackParamList = {
-  MainLayout: undefined;
+  CustomDrawer: undefined;
   // Home: undefined;
   // Favourite: undefined;
   // Cart: undefined;
@@ -42,7 +40,7 @@ const Screens = () => {
           headerShown: false,
           //   headerBackImage: () => <Text style={tw` text-blue-500`}>back</Text>,
         }}
-        initialRouteName="MainLayout"
+        initialRouteName="CustomDrawer"
       >
         <RootStack.Screen name="CustomDrawer" component={CustomDrawer} />
         {/* <RootStack.Screen name="Restaurant" component={Restaurant} /> */}

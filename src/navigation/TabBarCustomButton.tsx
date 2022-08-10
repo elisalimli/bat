@@ -1,16 +1,27 @@
 import { BottomTabBarButtonProps } from "@react-navigation/bottom-tabs";
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
-import { TouchableOpacity, View } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 import { Path, Svg } from "react-native-svg";
+import { DRAWER_SCREENS } from "../../constants/constants";
 import { useGetColor } from "../hooks";
+import { useDrawerStore } from "../store";
 import { tw } from "../utils";
 
-const TabBarCustomButton: React.FC<BottomTabBarButtonProps> = ({
-  accessibilityState,
-  children,
-  onPress,
-}) => {
-  var isSelected = accessibilityState?.selected;
+const TabBarCustomButton: React.FC<BottomTabBarButtonProps> = (props) => {
+  const { accessibilityState, children, onPress } = props;
+  const isSelected = accessibilityState?.selected;
+  const navigation = useNavigation();
+  const { selectedTab, setSelectedTab } = useDrawerStore();
+
+  const handlePress = (e) => {
+    if (onPress) onPress(e);
+
+    const { index, routeNames } = navigation.getState();
+
+    // setting the current tab for drawer
+    setSelectedTab(routeNames[index] as any);
+  };
 
   if (isSelected) {
     return (
@@ -31,6 +42,7 @@ const TabBarCustomButton: React.FC<BottomTabBarButtonProps> = ({
           onPress={onPress}
         >
           {children}
+          <Text>asd</Text>
         </TouchableOpacity>
       </View>
     );
@@ -39,7 +51,7 @@ const TabBarCustomButton: React.FC<BottomTabBarButtonProps> = ({
       <TouchableOpacity
         style={tw`flex-1 h-11 py-4 bg-white`}
         activeOpacity={1}
-        onPress={onPress}
+        onPress={handlePress}
       >
         {children}
       </TouchableOpacity>

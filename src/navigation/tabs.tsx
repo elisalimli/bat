@@ -3,8 +3,10 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React from "react";
 import { Image, Text } from "react-native";
 import { icons } from "../../constants";
+import { DRAWER_SCREENS } from "../../constants/constants";
 import { useGetColor } from "../hooks";
 import { Favourite, Home, Notification, Search } from "../screens";
+import Coupons from "../screens/Coupons/Coupons";
 import CustomTabBar from "./CustomTabBar";
 import TabBarCustomButton from "./TabBarCustomButton";
 
@@ -13,7 +15,7 @@ type TabStackParamList = {
   Search: undefined;
   Notification: undefined;
   Favourite: undefined;
-  Coupon: undefined;
+  Coupons: undefined;
 };
 
 export type RootStackScreenProps<T extends keyof TabStackParamList> =
@@ -38,8 +40,9 @@ export default function Tabs() {
             case "Notification":
               icon = notification;
               break;
-            case "Coupon":
+            case "Coupons":
               icon = coupon;
+              break;
             case "Favourite":
               icon = favourite;
               break;
@@ -73,11 +76,11 @@ export default function Tabs() {
         },
       })}
     >
-      <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Search" component={Search} />
-      <Tab.Screen name="Notification" component={Notification} />
-      <Tab.Screen name="Coupon" component={Favourite} />
-      <Tab.Screen name="Favourite" component={Favourite} />
+      <Tab.Screen name={DRAWER_SCREENS.HOME} component={Home} />
+      <Tab.Screen name={DRAWER_SCREENS.SEARCH} component={Search} />
+      <Tab.Screen name={DRAWER_SCREENS.COUPONS} component={Favourite} />
+      <Tab.Screen name={DRAWER_SCREENS.FAVOURITE} component={Coupons} />
+      <Tab.Screen name={DRAWER_SCREENS.NOTIFICATION} component={Notification} />
     </Tab.Navigator>
   );
 }
