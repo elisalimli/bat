@@ -24,6 +24,14 @@ export enum DRAWER_SCREENS {
   HELP_CENTER = "Help Center",
 }
 
+export interface IOnBoardingScreen {
+  id: number;
+  backgroundImage: any;
+  bannerImage: any;
+  title: string;
+  description: string;
+}
+
 ///----
 const onboarding_screens = [
   {
