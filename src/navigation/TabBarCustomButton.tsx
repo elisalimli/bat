@@ -47,7 +47,6 @@ const TabBarCustomButton: React.FC<BottomTabBarButtonProps> = (props) => {
           onPress={onPress}
         >
           {children}
-          <Text>asd</Text>
         </TouchableOpacity>
       </View>
     );
