@@ -1,34 +1,31 @@
 import React, { forwardRef } from "react";
-import { Image, ImageBackground, Text, View } from "react-native";
+import {
+  Image,
+  ImageBackground,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { FlatList } from "react-native-gesture-handler";
 import { WINDOW } from "../../../../constants";
 import { IOnBoardingScreen } from "../../../../constants/constants";
 import { tw } from "../../../utils";
+import OnBoardingInfo from "./OnBoardingInfo";
 
-interface IOnBoardingListItemProps {
-  item: IOnBoardingScreen;
-}
+const OnBoardingListItem = React.forwardRef<FlatList, IOnBoardingScreen>(
+  (item, ref) => {
+    const { backgroundImage, bannerImage } = item;
 
-const OnBoardingListItem = React.forwardRef<FlatList, IOnBoardingListItemProps>(
-  ({ item: { backgroundImage, bannerImage, description, title } }, ref) => {
     return (
       <View style={{ flex: 1, width: WINDOW.width }}>
         <ImageBackground
-          style={tw`justify-center items-center w-full flex flex-3`}
+          style={tw`justify-center items-center w-full flex flex-5`}
           source={backgroundImage}
         >
           <Image source={bannerImage} style={tw`-mb-52`} />
         </ImageBackground>
         <View style={tw`flex-2`}>
-          {/* OnBoarding Info */}
-          <View style={tw`flex justify-center items-center`}>
-            {/* Title */}
-            <Text style={tw`mt-24 h1 font-medium`}>{title}</Text>
-            {/* Description */}
-            <Text style={tw`mx-4 my-2 body4 text-gray text-center`}>
-              {description}
-            </Text>
-          </View>
+          <OnBoardingInfo {...item} />
         </View>
       </View>
     );
