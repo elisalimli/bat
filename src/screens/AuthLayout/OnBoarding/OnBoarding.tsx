@@ -4,6 +4,7 @@ import { Animated, FlatList, Text, TouchableOpacity, View } from "react-native";
 import { constants, WINDOW } from "../../../../constants";
 import { useOnBoardingStore } from "../../../store";
 import { tw } from "../../../utils";
+import { RootStackNavigationProps } from "../../Screens";
 import OnBoardingCarouselDots from "./OnBoardingCarouselDots";
 import HeaderLogo from "./OnBoardingHeaderLogo";
 import OnBoardingList from "./OnBoardingList";
@@ -13,7 +14,7 @@ const OnBoarding = () => {
   const listRef = useRef<FlatList>();
   const { currentIndex } = useOnBoardingStore();
 
-  const navigation = useNavigation();
+  const navigation = useNavigation<RootStackNavigationProps>();
 
   // On Press Functions
   const handleNavigationToSignIn = () => navigation.replace("SignIn");
