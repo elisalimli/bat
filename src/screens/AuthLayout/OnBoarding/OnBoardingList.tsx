@@ -6,9 +6,6 @@ import { useOnBoardingStore } from "../../../store";
 import OnBoardingListItem from "./OnBoardingListItem";
 
 type IOnBoardingListProps = IOnBoardingCarouselSharedProps;
-interface FancyButtonProps {
-  fooBar?: string; // my custom prop
-}
 
 const OnBoardingList = React.forwardRef<
   FlatList,
