@@ -28,7 +28,7 @@ const OnBoardingFooter = React.forwardRef<
     // 2 -> do not nothing
 
     // if position is the last element then do nothing
-    if (position === constants.onboarding_screens?.length - 1) return;
+    if (position === constants?.onboarding_screens?.length - 1) return;
     // scrolling to the next element
     ref?.current?.scrollToIndex({
       index: position + 1,

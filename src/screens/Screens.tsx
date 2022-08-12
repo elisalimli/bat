@@ -10,7 +10,13 @@ import { StatusBar } from "react-native";
 import { useGetColor } from "../hooks";
 import CustomDrawer from "../navigation/CustomDrawer";
 import useAuthStore from "../store/useAuthStore";
-import { ForgotPassword, OnBoarding, Otp, SignIn, SignUp } from "./AuthLayout";
+import {
+  OnBoarding,
+  SignIn,
+  SignUp,
+  ForgotPassword,
+  Otp,
+} from "./Authentication";
 
 export type RootStackParamList = {
   MainLayout: undefined;

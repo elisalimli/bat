@@ -1,11 +1,9 @@
-import { useNavigation } from "@react-navigation/native";
-import React, { Fragment, useRef } from "react";
-import { Animated, FlatList, Text, TouchableOpacity, View } from "react-native";
-import { constants, WINDOW } from "../../../../constants";
+import React, { useRef } from "react";
+import { Animated, FlatList, View } from "react-native";
+import { constants } from "../../../../constants";
 import { IScrollX } from "../../../shared/types/IOnBoardingCarouselSharedProps";
 import { useOnBoardingStore } from "../../../store";
 import { tw } from "../../../utils";
-import { RootStackNavigationProps } from "../../Screens";
 import OnBoardingCarouselDots from "./OnBoardingCarouselDots";
 import OnBoardingFooter from "./OnBoardingFooter";
 import HeaderLogo from "./OnBoardingHeaderLogo";
