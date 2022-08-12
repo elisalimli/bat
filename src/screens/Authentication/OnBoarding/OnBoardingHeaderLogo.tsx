@@ -1,6 +1,16 @@
 import { Image, View } from "react-native";
 import { images, WINDOW } from "../../../../constants";
 
+export const Logo = () => {
+  return (
+    <Image
+      resizeMode="contain"
+      source={images.logo_02}
+      style={{ height: WINDOW.height * 0.075, width: WINDOW.width / 2 }}
+    />
+  );
+};
+
 const HeaderLogo = () => {
   return (
     <View
@@ -13,10 +23,7 @@ const HeaderLogo = () => {
         alignItems: "center",
       }}
     >
-      <Image
-        source={images.logo_02}
-        style={{ height: 48, width: WINDOW.width / 2 }}
-      />
+      <Logo />
     </View>
   );
 };

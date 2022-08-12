@@ -7,9 +7,9 @@ module.exports = {
       addUtilities({
         // 😎 similar to `@apply`
         largeTitle: `font-regular text-5xl`,
-        h1: `font-black text-2xl`,
+        h1: `font-bold text-2xl`,
         h2: `font-bold text-xl`,
-        h3: `font-bold text-lg`,
+        h3: `font-semibold text-lg`,
         h4: `font-semibold`,
         body1: `font-regular text-3xl`,
         body2: `font-regular text-xl`,
