@@ -1,5 +1,11 @@
 import React from "react";
-import { StyleProp, Text, TouchableOpacity, ViewStyle } from "react-native";
+import {
+  StyleProp,
+  Text,
+  TouchableOpacity,
+  TouchableOpacityProps,
+  ViewStyle,
+} from "react-native";
 import { tw } from "../../utils";
 
 enum ButtonVariant {
@@ -27,7 +33,7 @@ type ButtonProps = {
   borderRadius?: keyof typeof BorderRadiusVariant;
   containerStyle?: StyleProp<ViewStyle>;
   textStyle?: StyleProp<ViewStyle>;
-} & React.ComponentPropsWithRef<"button">;
+} & TouchableOpacityProps;
 
 const Button = React.forwardRef<TouchableOpacity, ButtonProps>(
   (
@@ -49,10 +55,10 @@ const Button = React.forwardRef<TouchableOpacity, ButtonProps>(
     return (
       <TouchableOpacity
         ref={ref}
-        type="button"
         disabled={disabled}
         style={[
-          tw`flex justify-center items-center p-2 rounded-lg`,
+          tw`flex justify-center items-center rounded-lg`,
+          [variant !== "ghost" && tw`p-4`],
           [variant === "primary" && tw`bg-primary`],
           [variant === "blue" && tw`bg-blue`],
           containerStyle,
