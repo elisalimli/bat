@@ -23,7 +23,7 @@ const AuthLayout: React.FC<IAuthLayoutProps> = ({
       {/* Header & Subtitle */}
       <View style={tw`justify-center items-center mt-8`}>
         <Text style={tw`h1`}>{title}</Text>
-        <Text style={tw`text-gray body4 mt-1`}>{subTitle} </Text>
+        <Text style={tw`text-gray body4 mt-1 text-center`}>{subTitle} </Text>
       </View>
       <View style={tw`flex-1 flex-col mt-8`}>{children}</View>
     </View>
