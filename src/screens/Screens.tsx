@@ -18,9 +18,11 @@ import {
   ForgotPassword,
   Otp,
 } from "./Authentication";
+import CartTab from "./Cart/CartTab";
 
 export type RootStackParamList = {
   MainLayout: undefined;
+  MyCart: undefined;
 } & AuthStackParamList &
   TabStackParamList;
 
@@ -57,7 +59,10 @@ const Screens = () => {
         initialRouteName="MainLayout"
       >
         {auth ? (
-          <RootStack.Screen name="MainLayout" component={CustomDrawer} />
+          <RootStack.Group>
+            <RootStack.Screen name="MainLayout" component={CustomDrawer} />
+            <RootStack.Screen name="MyCart" component={CartTab} />
+          </RootStack.Group>
         ) : (
           <RootStack.Group>
             <RootStack.Screen name="OnBoarding" component={OnBoarding} />

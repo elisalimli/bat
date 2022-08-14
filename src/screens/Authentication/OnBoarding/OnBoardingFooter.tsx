@@ -59,7 +59,7 @@ const OnBoardingFooter = React.forwardRef<
       <Button
         variant="primary"
         containerStyle={tw`flex-1`}
-        onPress={handleNavigationToSignIn}
+        onPress={handlePress}
       >
         Next
       </Button>

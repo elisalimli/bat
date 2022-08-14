@@ -4,7 +4,7 @@ const screens = {
   main_layout: "MainLayout",
   home: "Home",
   search: "Search",
-  cart: "Cart",
+  cart: "MyCart",
   favourite: "Favourite",
   notification: "Notion",
   my_wallet: "My Wallet",

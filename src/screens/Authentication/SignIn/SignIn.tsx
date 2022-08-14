@@ -72,11 +72,11 @@ const SignIn = () => {
         </View>
       </View>
       <View>
-        <Button containerStyle={tw`flex-row`} withIcon variant="blue">
+        <Button containerStyle={tw`flex-row`} wrappedText variant="blue">
           <Image source={icons.fb} style={tw`w-4 h-4 mr-2`} />
           <Text style={tw`h4 text-white`}>Continue With Facebook</Text>
         </Button>
-        <Button containerStyle={tw`flex-row my-2 p-2`} withIcon>
+        <Button containerStyle={tw`flex-row my-2 p-2`} wrappedText>
           <Image source={icons.google} style={tw`w-4 h-4 mr-2`} />
           <Text style={tw`body4`}>Continue With Facebook</Text>
         </Button>

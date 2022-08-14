@@ -35,7 +35,7 @@ type ButtonProps = {
   borderRadius?: keyof typeof BorderRadiusVariant;
   containerStyle?: StyleProp<ViewStyle>;
   textStyle?: StyleProp<ViewStyle>;
-  withIcon?: boolean;
+  wrappedText?: boolean;
 } & TouchableOpacityProps;
 
 const Button = React.forwardRef<TouchableOpacity, ButtonProps>(
@@ -49,7 +49,7 @@ const Button = React.forwardRef<TouchableOpacity, ButtonProps>(
       variant = "ghost",
       borderRadius = "lg",
       isDarkBg = false,
-      withIcon = false,
+      wrappedText = false,
       ...rest
     },
     ref
@@ -69,7 +69,7 @@ const Button = React.forwardRef<TouchableOpacity, ButtonProps>(
         ]}
         {...rest}
       >
-        {withIcon ? (
+        {wrappedText ? (
           children
         ) : (
           <Text

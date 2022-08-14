@@ -1,8 +1,9 @@
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import React from "react";
 import { View } from "react-native";
-import { DRAWER_SCREENS } from "../../constants/constants";
+import constants, { DRAWER_SCREENS } from "../../constants/constants";
 import { Home, Notification } from "../screens";
+import Screens from "../screens/Screens";
 import Settings from "../screens/Settings/Settings";
 import { tw } from "../utils";
 import CustomDrawerContent from "./CustomDrawerContent";
