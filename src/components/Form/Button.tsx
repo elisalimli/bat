@@ -1,11 +1,13 @@
 import React from "react";
 import {
+  Image,
   StyleProp,
   Text,
   TouchableOpacity,
   TouchableOpacityProps,
   ViewStyle,
 } from "react-native";
+import { icons } from "../../../constants";
 import { tw } from "../../utils";
 
 enum ButtonVariant {
@@ -33,6 +35,7 @@ type ButtonProps = {
   borderRadius?: keyof typeof BorderRadiusVariant;
   containerStyle?: StyleProp<ViewStyle>;
   textStyle?: StyleProp<ViewStyle>;
+  withIcon?: boolean;
 } & TouchableOpacityProps;
 
 const Button = React.forwardRef<TouchableOpacity, ButtonProps>(
@@ -46,6 +49,7 @@ const Button = React.forwardRef<TouchableOpacity, ButtonProps>(
       variant = "ghost",
       borderRadius = "lg",
       isDarkBg = false,
+      withIcon = false,
       ...rest
     },
     ref
@@ -65,11 +69,19 @@ const Button = React.forwardRef<TouchableOpacity, ButtonProps>(
         ]}
         {...rest}
       >
-        <Text
-          style={[tw`h4`, [variant === "primary" && tw`text-white`], textStyle]}
-        >
-          {children}
-        </Text>
+        {withIcon ? (
+          children
+        ) : (
+          <Text
+            style={[
+              tw`h4 flex`,
+              [variant === "primary" && tw`text-white`],
+              textStyle,
+            ]}
+          >
+            {children}
+          </Text>
+        )}
       </TouchableOpacity>
     );
   }

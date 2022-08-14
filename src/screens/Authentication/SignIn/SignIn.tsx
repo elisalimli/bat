@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import { Image, Text, TextInput, View } from "react-native";
-import { icons, images } from "../../../../constants";
-import FormInput from "../../../components/Form/FormInput";
-import { tw } from "../../../utils";
-import AuthLayout from "../AuthLayout";
-import { Switch } from "react-native-switch";
-import { useGetColor } from "../../../hooks";
-import { TouchableOpacity } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
+import React, { useState } from "react";
+import { Image, Text, View } from "react-native";
+import { Switch } from "react-native-switch";
+import { icons } from "../../../../constants";
+import Button from "../../../components/Form/Button";
+import FormInput from "../../../components/Form/FormInput";
+import { useGetColor } from "../../../hooks";
+import { tw } from "../../../utils";
 import { RootStackNavigationProps } from "../../Screens";
+import AuthLayout from "../AuthLayout";
 
 const SignIn = () => {
   const [isEnabled, setIsEnabled] = useState(false);
@@ -48,43 +48,34 @@ const SignIn = () => {
             backgroundActive={useGetColor("primary")}
             backgroundInactive={useGetColor("gray")}
           />
-          <TouchableOpacity>
-            <Text style={tw`text-gray ml-2 body4`}>Save me</Text>
-          </TouchableOpacity>
+          <Button textStyle={tw`text-gray ml-2`}>Save me</Button>
         </View>
-        <TouchableOpacity>
-          <Text style={tw`text-gray body4 text-sm`}>Forgot password?</Text>
-        </TouchableOpacity>
+        <Button textStyle={tw`body4 text-gray`}>Forgot password?</Button>
       </View>
       <View style={tw`mt-4 flex-1`}>
-        <TouchableOpacity
-          style={tw`bg-primary py-4 justify-center items-center rounded-2xl`}
-        >
-          <Text style={tw`text-white h3`}>Sign In</Text>
-        </TouchableOpacity>
+        <Button textStyle={tw`h3`} variant="primary">
+          Sign In
+        </Button>
         <View style={tw`flex-row justify-center items-center mt-4`}>
           <Text style={tw`text-gray body4`}>Don't have an account ?</Text>
-          <TouchableOpacity
+          <Button
+            containerStyle={tw`ml-2`}
+            textStyle={tw`text-primary`}
             onPress={() => navigation.push("SignUp")}
-            style={tw`ml-2`}
           >
-            <Text style={tw`text-primary h4`}>Sign up</Text>
-          </TouchableOpacity>
+            Sign up
+          </Button>
         </View>
       </View>
       <View>
-        <TouchableOpacity
-          style={tw`flex-row justify-center items-center bg-blue rounded-lg py-3`}
-        >
+        <Button containerStyle={tw`flex-row`} withIcon variant="blue">
           <Image source={icons.fb} style={tw`w-4 h-4 mr-2`} />
-          <Text style={tw`text-white body4`}>Continue With Facebook</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={tw`flex-row justify-center items-center rounded-lg py-3 mt-1 mb-2`}
-        >
+          <Text style={tw`h4 text-white`}>Continue With Facebook</Text>
+        </Button>
+        <Button containerStyle={tw`flex-row my-2 p-2`} withIcon>
           <Image source={icons.google} style={tw`w-4 h-4 mr-2`} />
-          <Text style={tw`body4`}>Continue With Google</Text>
-        </TouchableOpacity>
+          <Text style={tw`body4`}>Continue With Facebook</Text>
+        </Button>
       </View>
     </AuthLayout>
   );

@@ -1,11 +1,5 @@
-import React, { forwardRef } from "react";
-import {
-  Image,
-  ImageBackground,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import React from "react";
+import { Image, ImageBackground, View } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
 import { WINDOW } from "../../../../constants";
 import { IOnBoardingScreen } from "../../../../constants/constants";

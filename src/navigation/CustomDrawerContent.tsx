@@ -19,11 +19,7 @@ const CustomDrawerContent: React.FC<DrawerContentComponentProps> = (props) => {
       <View style={tw`pl-4 flex-1`}>
         <View>
           {/* Close button */}
-          <TouchableOpacity
-            onPress={() => {
-              navigation.closeDrawer();
-            }}
-          >
+          <TouchableOpacity onPress={() => navigation.closeDrawer()}>
             <Image source={icons.cross} style={tw`tint-white w-8 h-8`} />
           </TouchableOpacity>
           {/* Profile */}

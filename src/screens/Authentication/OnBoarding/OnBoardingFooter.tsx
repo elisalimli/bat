@@ -2,6 +2,7 @@ import { useNavigation } from "@react-navigation/native";
 import React, { Fragment } from "react";
 import { Text, TouchableOpacity } from "react-native";
 import { constants, WINDOW } from "../../../../constants";
+import Button from "../../../components/Form/Button";
 import { IOnBoardingCarouselSharedProps } from "../../../shared/types/IOnBoardingCarouselSharedProps";
 import { tw } from "../../../utils";
 import { RootStackNavigationProps } from "../../Screens";
@@ -37,28 +38,31 @@ const OnBoardingFooter = React.forwardRef<
   };
 
   return isLastElement ? (
-    <TouchableOpacity
-      style={tw`flex-1 justify-center items-center bg-primary rounded-lg py-4`}
+    <Button
+      variant="primary"
+      containerStyle={tw`flex-1`}
       onPress={handleNavigationToSignIn}
     >
-      <Text style={tw`text-white h4`}>Let's Get Started</Text>
-    </TouchableOpacity>
+      Let's Get Started
+    </Button>
   ) : (
     <Fragment>
       {/* Skip Button */}
-      <TouchableOpacity
+      <Button
+        containerStyle={tw`flex-1 items-start`}
+        textStyle={tw`text-gray`}
         onPress={handleNavigationToSignIn}
-        style={tw`flex-1 justify-center`}
       >
-        <Text style={tw`text-gray h4`}>Skip</Text>
-      </TouchableOpacity>
+        Skip
+      </Button>
       {/* Next Button */}
-      <TouchableOpacity
-        style={tw`flex-1 justify-center items-center bg-primary rounded-lg py-4`}
-        onPress={handlePress}
+      <Button
+        variant="primary"
+        containerStyle={tw`flex-1`}
+        onPress={handleNavigationToSignIn}
       >
-        <Text style={tw`text-white h4`}>Next</Text>
-      </TouchableOpacity>
+        Next
+      </Button>
     </Fragment>
   );
 });
