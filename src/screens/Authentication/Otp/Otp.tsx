@@ -1,9 +1,21 @@
-import React, { useEffect, useState } from "react";
-import { Text, View } from "react-native";
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
+import { StyleSheet, Text, View } from "react-native";
 import OTPInputView from "@twotalltotems/react-native-otp-input";
 import { tw } from "../../../utils";
 import AuthLayout from "../AuthLayout";
 import Button from "../../../components/Form/Button";
+
+import {
+  BottomSheetModal,
+  BottomSheetModalProvider,
+} from "@gorhom/bottom-sheet";
+import TermsAndConditions from "./TermsAndConditions";
 
 const Otp = () => {
   const [timer, setTimer] = useState(60);
@@ -50,8 +62,8 @@ const Otp = () => {
         <Text style={tw`text-center text-gray body4 mt-4`}>
           By signing up, you agree to our
         </Text>
-        <Button textStyle={tw`text-primary body4`}>Terms and Conditions</Button>
       </View>
+      <TermsAndConditions />
     </AuthLayout>
   );
 };
