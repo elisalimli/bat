@@ -26,7 +26,7 @@ const CustomDrawer = () => {
           sceneContainerStyle: tw`bg-transparent`,
         }}
         // drawerContent={(prop) => <CustomDrawerContent {...prop} />}
-        initialRouteName="Home"
+        initialRouteName="Tabs"
       >
         <Drawer.Screen name="Tabs" component={Tabs} />
         <Drawer.Screen name={DRAWER_SCREENS.SETTINGS} component={Settings} />

@@ -10,7 +10,7 @@ import Coupons from "../screens/Coupons/Coupons";
 import CustomTabBar from "./CustomTabBar";
 import TabBarCustomButton from "./TabBarCustomButton";
 
-type TabStackParamList = {
+export type TabStackParamList = {
   Home: undefined;
   Search: undefined;
   Notification: undefined;

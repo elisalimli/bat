@@ -16,8 +16,13 @@ import {
   BottomSheetModalProvider,
 } from "@gorhom/bottom-sheet";
 import TermsAndConditions from "./TermsAndConditions";
+import { useNavigation } from "@react-navigation/native";
+import { RootStackNavigationProps } from "../../Screens";
+import { useAuthStore } from "../../../store";
 
 const Otp = () => {
+  const { setAuth } = useAuthStore();
+  const navigation = useNavigation<RootStackNavigationProps>();
   const [timer, setTimer] = useState(60);
 
   useEffect(() => {
@@ -38,7 +43,12 @@ const Otp = () => {
         <OTPInputView
           codeInputFieldStyle={tw`w-14 h-14 h3 text-black bg-lightGray2 rounded-lg`}
           pinCount={4}
-          onCodeFilled={(code) => console.log("code => ", code)}
+          onCodeFilled={(code) => {
+            const VALID_CODE = "1111";
+            if (code === VALID_CODE) {
+              navigation.replace("Tabs");
+            }
+          }}
         />
       </View>
       {/* Didn't recive code */}
@@ -58,7 +68,15 @@ const Otp = () => {
       </View>
       {/* Continue Button & Terms and Conditions */}
       <View>
-        <Button variant="primary">Continue</Button>
+        <Button
+          onPress={() => {
+            setAuth(true);
+            navigation.replace("Home");
+          }}
+          variant="primary"
+        >
+          Continue
+        </Button>
         <Text style={tw`text-center text-gray body4 mt-4`}>
           By signing up, you agree to our
         </Text>

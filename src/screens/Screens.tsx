@@ -9,6 +9,7 @@ import React from "react";
 import { StatusBar } from "react-native";
 import { useGetColor } from "../hooks";
 import CustomDrawer from "../navigation/CustomDrawer";
+import { TabStackParamList } from "../navigation/tabs";
 import useAuthStore from "../store/useAuthStore";
 import {
   OnBoarding,
@@ -20,7 +21,8 @@ import {
 
 export type RootStackParamList = {
   MainLayout: undefined;
-} & AuthStackParamList;
+} & AuthStackParamList &
+  TabStackParamList;
 
 export type AuthStackParamList = {
   OnBoarding: undefined;

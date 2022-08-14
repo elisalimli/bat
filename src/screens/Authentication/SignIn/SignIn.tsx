@@ -53,7 +53,11 @@ const SignIn = () => {
         <Button textStyle={tw`body4 text-gray`}>Forgot password?</Button>
       </View>
       <View style={tw`mt-4 flex-1`}>
-        <Button textStyle={tw`h3`} variant="primary">
+        <Button
+          onPress={() => navigation.push("Otp")}
+          textStyle={tw`h3`}
+          variant="primary"
+        >
           Sign In
         </Button>
         <View style={tw`flex-row justify-center items-center mt-4`}>
