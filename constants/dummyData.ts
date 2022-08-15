@@ -35,6 +35,7 @@ export interface IFood {
   isFavourite: boolean;
   image: any;
 }
+
 export interface IMenu {
   id: number;
   name: string;
@@ -73,6 +74,8 @@ const vegBiryani = {
   isFavourite: true,
   image: require("../assets/dummyData/veg_biryani.png"),
 };
+
+export const cart_data = [hamburger, hotTacos, vegBiryani];
 
 const wrapSandwich = {
   id: 4,
