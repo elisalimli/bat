@@ -41,7 +41,11 @@ const CartFooter = () => {
             <Text style={tw`h2`}>Total</Text>
             <Text style={tw`h2`}>$45.97</Text>
           </View>
-          <Button onPress={() => navigation.push("MyCard")} variant="primary">
+          <Button
+            containerStyle={tw`mt-2`}
+            onPress={() => navigation.push("MyCard")}
+            variant="primary"
+          >
             Place your order
           </Button>
         </View>
