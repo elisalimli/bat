@@ -5,6 +5,7 @@ const screens = {
   home: "Home",
   search: "Search",
   cart: "MyCart",
+  card: "MyCard",
   favourite: "Favourite",
   notification: "Notion",
   my_wallet: "My Wallet",

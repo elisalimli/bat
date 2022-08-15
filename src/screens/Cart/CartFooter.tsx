@@ -4,8 +4,12 @@ import Button from "../../components/Form/Button";
 import { tw } from "../../utils";
 import { LinearGradient } from "expo-linear-gradient";
 import { useGetColor } from "../../hooks";
+import { useNavigation } from "@react-navigation/native";
+import { RootStackNavigationProps } from "../Screens";
 
 const CartFooter = () => {
+  const navigation = useNavigation<RootStackNavigationProps>();
+
   return (
     <View style={tw`flex-1`}>
       {/* Shadow */}
@@ -37,7 +41,9 @@ const CartFooter = () => {
             <Text style={tw`h2`}>Total</Text>
             <Text style={tw`h2`}>$45.97</Text>
           </View>
-          <Button variant="primary">Place your order</Button>
+          <Button onPress={() => navigation.push("MyCard")} variant="primary">
+            Place your order
+          </Button>
         </View>
       </View>
     </View>
