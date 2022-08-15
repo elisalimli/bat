@@ -10,10 +10,8 @@ const foods = [];
 const CartTab = () => {
   return (
     <View style={tw`flex-1 bg-white`}>
-      {/* Header */}
       <CartHeader />
       <CartList />
-
       <CartFooter />
     </View>
   );

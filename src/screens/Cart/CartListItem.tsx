@@ -41,11 +41,11 @@ const CartListItem: React.FC<ICartListItemProps> = ({
         ref={(ref: Swipeable) => (row[index] = ref)}
       >
         <View
-          style={tw`flex-row justify-between items-center p-2 bg-lightGray2 rounded-lg shadow-sm`}
+          style={tw`bg-lightGray2 flex-row justify-between  p-2 rounded-lg shadow-sm`}
         >
-          <View style={tw`flex-row items-center`}>
-            <Image source={image} style={tw`w-18 h-18`} />
-            <View>
+          <View style={tw`flex-row items-center justify-center`}>
+            <Image source={image} style={tw`w-14 h-18 mt-2`} />
+            <View style={tw`mt-2 ml-4 mb-2`}>
               <Text style={tw`body4 font-medium`}>{name}</Text>
               <Text style={tw`text-primary h4`}>${price}</Text>
             </View>
