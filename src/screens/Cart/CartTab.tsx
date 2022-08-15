@@ -10,9 +10,13 @@ const foods = [];
 const CartTab = () => {
   return (
     <View style={tw`flex-1 bg-white`}>
-      <CartHeader />
-      <CartList />
-      <CartFooter />
+      <View style={tw`flex-2`}>
+        <CartHeader />
+        <CartList />
+      </View>
+      <View style={tw`flex-1 `}>
+        <CartFooter />
+      </View>
     </View>
   );
 };
