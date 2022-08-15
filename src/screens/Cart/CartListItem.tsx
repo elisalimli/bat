@@ -29,39 +29,39 @@ const CartListItem: React.FC<ICartListItemProps> = ({
    */
   //
   const closeRow = (index: number) => {
-    if (prevOpenedRow && prevOpenedRow !== row[index]) {
-      prevOpenedRow.close();
-    }
+    if (prevOpenedRow && prevOpenedRow !== row[index]) prevOpenedRow.close();
     prevOpenedRow = row[index];
   };
 
   return (
-    <Swipeable
-      renderRightActions={() => <RightActions onClick={onClick} />}
-      onSwipeableOpen={() => closeRow(index)}
-      ref={(ref: Swipeable) => (row[index] = ref)}
-    >
-      <View
-        style={tw`flex-row justify-between items-center p-2 bg-lightGray2 rounded-lg shadow-sm`}
+    <View style={tw`mb-4`}>
+      <Swipeable
+        renderRightActions={() => <RightActions onClick={onClick} />}
+        onSwipeableOpen={() => closeRow(index)}
+        ref={(ref: Swipeable) => (row[index] = ref)}
       >
-        <View style={tw`flex-row items-center`}>
-          <Image source={image} style={tw`w-18 h-18`} />
-          <View>
-            <Text style={tw`body4 font-medium`}>{name}</Text>
-            <Text style={tw`text-primary h4`}>${price}</Text>
+        <View
+          style={tw`flex-row justify-between items-center p-2 bg-lightGray2 rounded-lg shadow-sm`}
+        >
+          <View style={tw`flex-row items-center`}>
+            <Image source={image} style={tw`w-18 h-18`} />
+            <View>
+              <Text style={tw`body4 font-medium`}>{name}</Text>
+              <Text style={tw`text-primary h4`}>${price}</Text>
+            </View>
+          </View>
+          <View style={tw`flex-row items-center`}>
+            <TouchableOpacity>
+              <Image source={icons.minus} style={tw`w-6 h-6 tint-primary`} />
+            </TouchableOpacity>
+            <Text style={tw`h1 mx-3`}>5</Text>
+            <TouchableOpacity>
+              <Image source={icons.plus} style={tw`w-6 h-6 tint-primary`} />
+            </TouchableOpacity>
           </View>
         </View>
-        <View style={tw`flex-row items-center`}>
-          <TouchableOpacity>
-            <Image source={icons.minus} style={tw`w-6 h-6 tint-primary`} />
-          </TouchableOpacity>
-          <Text style={tw`h1 mx-3`}>5</Text>
-          <TouchableOpacity>
-            <Image source={icons.plus} style={tw`w-6 h-6 tint-primary`} />
-          </TouchableOpacity>
-        </View>
-      </View>
-    </Swipeable>
+      </Swipeable>
+    </View>
   );
 };
 

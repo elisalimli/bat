@@ -1,6 +1,7 @@
 import React from "react";
-import { View } from "react-native";
+import { Text, View } from "react-native";
 import { tw } from "../../utils";
+import CartFooter from "./CartFooter";
 import CartHeader from "./CartHeader";
 import CartList from "./CartList";
 
@@ -12,6 +13,8 @@ const CartTab = () => {
       {/* Header */}
       <CartHeader />
       <CartList />
+
+      <CartFooter />
     </View>
   );
 };
