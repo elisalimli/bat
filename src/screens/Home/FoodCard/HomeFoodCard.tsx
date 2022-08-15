@@ -1,24 +1,21 @@
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import {
-  Text,
-  View,
-  StyleSheet,
   FlatList,
   Image,
+  ListRenderItemInfo,
+  Text,
   TouchableOpacity,
+  View,
 } from "react-native";
-import { constants, dummyData, icons } from "../../../../constants";
-import { IFood, IMenu } from "../../../../constants/dummyData";
+import { dummyData, icons } from "../../../../constants";
+import { IFood } from "../../../../constants/dummyData";
 import { tw } from "../../../utils";
 import { RootStackNavigationProps } from "../../Screens";
 
-interface HomeFoodCardProps {}
-
-interface HomeFoodCardItemProps {
-  item: IFood;
+type HomeFoodCardItemProps = {
   navigation: RootStackNavigationProps;
-}
+} & ListRenderItemInfo<IFood>;
 
 const HomeFoodCardItem: React.FC<HomeFoodCardItemProps> = ({
   item: { name, image, description, price, calories },
