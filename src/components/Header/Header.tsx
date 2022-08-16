@@ -13,15 +13,11 @@ const Header: React.FC & IHeaderProps = ({ children }) => (
     {children}
   </View>
 );
-const Left: React.FC = ({ children }) => (
-  <View style={tw`flex-1 items-start`}>{children}</View>
-);
+const Left: React.FC = ({ children }) => <>{children}</>;
 const Title: React.FC = ({ children }) => (
-  <Text style={tw`body2 flex-1 text-center`}>{children}</Text>
+  <Text style={tw`body2`}>{children}</Text>
 );
-const Right: React.FC = ({ children }) => (
-  <View style={tw`flex-1 items-end`}>{children}</View>
-);
+const Right: React.FC = ({ children }) => <>{children}</>;
 
 Header.Left = Left;
 Header.Title = Title;
