@@ -18,7 +18,9 @@ const MyCard = () => {
         </Header.Right>
       </Header>
       <View style={tw`py-2 px-4`}>
-        {/* Cards */}
+        {/* Card Header */}
+        <Text style={tw`h3 ml-1 my-4`}>Add new card</Text>
+        {/* Cards List */}
         <MyCardList />
         {/* Footer */}
       </View>
