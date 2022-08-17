@@ -24,6 +24,7 @@ const SignIn = () => {
       <FormInput
         containerStyle={tw`mb-4`}
         label="Email"
+        keyboardType="email-address"
         placeholder="john@example.com"
         suffixComponent={
           <Image style={tw`w-4 h-4 tint-green`} source={icons.correct} />
