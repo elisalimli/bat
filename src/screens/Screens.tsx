@@ -11,6 +11,7 @@ import { useGetColor } from "../hooks";
 import CustomDrawer from "../navigation/CustomDrawer";
 import { TabStackParamList } from "../navigation/tabs";
 import useAuthStore from "../store/useAuthStore";
+import AddCard from "./AddCard/AddCard";
 import {
   OnBoarding,
   SignIn,
@@ -25,6 +26,7 @@ export type RootStackParamList = {
   MainLayout: undefined;
   MyCart: undefined;
   MyCard: undefined;
+  AddCard: undefined;
 } & AuthStackParamList &
   TabStackParamList;
 
@@ -65,6 +67,7 @@ const Screens = () => {
             <RootStack.Screen name="MainLayout" component={CustomDrawer} />
             <RootStack.Screen name="MyCart" component={CartTab} />
             <RootStack.Screen name="MyCard" component={MyCard} />
+            <RootStack.Screen name="AddCard" component={AddCard} />
           </RootStack.Group>
         ) : (
           <RootStack.Group>
