@@ -7,6 +7,34 @@ const myProfile = {
   address: "No. 88, Jln Padungan, Kuching",
 };
 
+const allCards = [
+  {
+    id: 1,
+    name: "Apple Pay",
+    icon: require("../assets/icons/apple.png"),
+  },
+  {
+    id: 2,
+    name: "Visa",
+    icon: require("../assets/icons/visa.png"),
+  },
+  {
+    id: 3,
+    name: "PayPal",
+    icon: require("../assets/icons/paypal.png"),
+  },
+  {
+    id: 4,
+    name: "Google Pay",
+    icon: require("../assets/icons/google.png"),
+  },
+  {
+    id: 5,
+    name: "Master Card",
+    icon: require("../assets/icons/mastercard.png"),
+  },
+];
+
 const categories = [
   {
     id: 1,
@@ -123,6 +151,7 @@ const menu = [
 
 export default {
   myProfile,
+  allCards,
   categories,
   menu,
 };

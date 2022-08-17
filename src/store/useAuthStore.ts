@@ -5,7 +5,7 @@ const useAuthStore = create(
   combine(
     {
       // selected restuarant
-      auth: true,
+      auth: false,
     },
     (set) => ({
       setAuth: (auth: boolean) => set(() => ({ auth })),

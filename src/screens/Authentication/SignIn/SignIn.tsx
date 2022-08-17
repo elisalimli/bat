@@ -22,13 +22,13 @@ const SignIn = () => {
       subTitle="Welcome back, you've been missed"
     >
       <FormInput
+        containerStyle={tw`mb-4`}
         label="Email"
         placeholder="john@example.com"
         suffixComponent={
           <Image style={tw`w-4 h-4 tint-green`} source={icons.correct} />
         }
       />
-      <View style={tw`mb-4`}></View>
       <FormInput label="Password" placeholder="****" secureTextEntry />
 
       {/* Save Me & Forgot password */}

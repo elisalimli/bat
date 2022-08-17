@@ -6,12 +6,15 @@ import {
   TextInput,
   Image,
   TextInputProps,
+  ViewStyle,
+  StyleProp,
 } from "react-native";
 import { icons } from "../../../constants";
 import { tw } from "../../utils";
 
 type FormInputProps = {
   label: string;
+  containerStyle?: StyleProp<ViewStyle>;
   prefixComponent?: React.ReactNode;
   suffixComponent?: React.ReactNode;
 } & TextInputProps;
@@ -20,10 +23,11 @@ const FormInput: React.FC<FormInputProps> = ({
   label,
   prefixComponent,
   suffixComponent,
+  containerStyle,
   ...props
 }) => {
   return (
-    <View>
+    <View style={containerStyle}>
       {/* Label and error msg */}
       <View style={tw`ml-2 mb-1`}>
         <Text style={tw`text-gray body4`}>{label}</Text>
