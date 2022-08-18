@@ -6,49 +6,7 @@ import { Header, HeaderBack } from "../../components/Header";
 import useCardsStore from "../../store/useCardsStore";
 import { tw } from "../../utils";
 import Card from "./Card";
-import MaskInput from "react-native-mask-input";
-
-const CREDIT_CARD_INPUT_MASK = [
-  /\d/,
-  /\d/,
-  /\d/,
-  /\d/,
-  " ",
-  /\d/,
-  /\d/,
-  /\d/,
-  /\d/,
-  " ",
-  /\d/,
-  /\d/,
-  /\d/,
-  /\d/,
-  " ",
-  /\d/,
-  /\d/,
-  /\d/,
-  /\d/,
-];
-
-function CreditCardInput() {
-  const [phone, setPhone] = React.useState("");
-  console.log("phone", phone);
-  return (
-    <MaskInput
-      keyboardType="number-pad"
-      placeholder="1234 1234 1234 1234"
-      value={phone}
-      onChangeText={(masked, unmasked) => {
-        setPhone(masked); // you can use the unmasked value as well
-
-        // assuming you typed "9" all the way:
-        console.log(masked); // (99) 99999 9999
-        console.log(unmasked); // 99999999999
-      }}
-      mask={CREDIT_CARD_INPUT_MASK}
-    />
-  );
-}
+import CardInput from "./CardInput";
 const AddCard = () => {
   const { selectedCard } = useCardsStore();
   return (
@@ -65,15 +23,8 @@ const AddCard = () => {
       {/* Credit card */}
       <Card />
       <View style={tw`flex-1 `}>
-        <FormInput
-          keyboardType="number-pad"
-          maskedInput={<CreditCardInput />}
-          label="Card number"
-          placeholder="1234123412341234"
-          suffixComponent={
-            <Image style={tw`w-5 h-5 tint-green`} source={icons.correct} />
-          }
-        />
+        {/* Masked Card Input */}
+        <CardInput />
         <FormInput
           label="Email"
           placeholder="john@example.com"

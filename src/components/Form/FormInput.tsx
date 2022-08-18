@@ -17,7 +17,7 @@ type FormInputProps = {
   containerStyle?: StyleProp<ViewStyle>;
   prefixComponent?: React.ReactNode;
   suffixComponent?: React.ReactNode;
-  maskedInput?: React.ReactNode;
+  maskedInput?: () => React.ReactNode;
 } & TextInputProps;
 
 const FormInput: React.FC<FormInputProps> = ({
@@ -40,7 +40,7 @@ const FormInput: React.FC<FormInputProps> = ({
 
         <View style={tw`flex-1 flex-row items-center py-3`}>
           {maskedInput ? (
-            maskedInput
+            maskedInput()
           ) : (
             <TextInput style={tw`flex-1 body4`} {...props} />
           )}
