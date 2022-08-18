@@ -7,7 +7,7 @@ interface CardExpireDateProps {}
 const CardExpireDate = (props: CardExpireDateProps) => {
   return (
     <View style={tw`absolute bottom-5 right-5`}>
-      <Text style={tw`text-white body4`}>10/25</Text>
+      <Text style={tw`text-white body4 font-semi-bold`}>10/25</Text>
     </View>
   );
 };
