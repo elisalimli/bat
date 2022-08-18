@@ -7,7 +7,7 @@ const useCardsStore = create(
   combine(
     {
       // selected restuarant
-      selectedCard: {} as ICard,
+      selectedCard: null as ICard | null,
     },
     (set) => ({
       setSelectedCard: (card: ICard) => set(() => ({ selectedCard: card })),

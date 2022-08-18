@@ -20,7 +20,7 @@ const MyCardList = (props: MyCardListProps) => {
     <ScrollView>
       {dummyData.allCards.map((card, index) => {
         const { icon, id, name } = card;
-        const isSelected = selectedCard.id === id;
+        const isSelected = selectedCard?.id === id;
         return (
           <TouchableOpacity
             onPress={() => {
