@@ -1,6 +1,6 @@
 import React from "react";
-import { Image, Text, View } from "react-native";
-import { images } from "../../../constants";
+import { Image, ImageBackground, Text, View } from "react-native";
+import { constants, dummyData, images } from "../../../constants";
 import { Header, HeaderBack } from "../../components/Header";
 import { tw } from "../../utils";
 
@@ -16,11 +16,19 @@ const AddCard = () => {
           <View style={tw`mr-2`}></View>
         </Header.Right>
       </Header>
-      <Image
-        source={images.card}
-        style={tw`w-full h-1/3`}
-        resizeMode="contain"
-      />
+      <View style={tw`p-2`}>
+        {/* Card Icon */}
+        <ImageBackground
+          source={images.card}
+          style={tw`w-full h-[200px] overflow-hidden rounded-lg`}
+        >
+          <Image
+            source={dummyData.allCards[0].icon}
+            resizeMode="contain"
+            style={tw`absolute right-5  w-[40px] h-[80px]`}
+          />
+        </ImageBackground>
+      </View>
       <View style={tw`flex-1 bg-red`}>
         <Text>asd</Text>
       </View>
