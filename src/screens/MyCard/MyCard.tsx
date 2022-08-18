@@ -3,12 +3,13 @@ import React from "react";
 import { ScrollView, Text, View } from "react-native";
 import Button from "../../components/Form/Button";
 import { Header, HeaderBack } from "../../components/Header";
+import useCardsStore from "../../store/useCardsStore";
 import { tw } from "../../utils";
 import { RootStackNavigationProps } from "../Screens";
+import MyCardFooter from "./MyCardFooter";
 import MyCardList from "./MyCardList";
 
 const MyCard = () => {
-  const navigation = useNavigation<RootStackNavigationProps>();
   return (
     <View style={tw`flex-1 bg-white`}>
       {/* Header */}
@@ -31,9 +32,7 @@ const MyCard = () => {
           <MyCardList />
         </ScrollView>
         {/* Footer */}
-        <Button onPress={() => navigation.push("AddCard")} variant="primary">
-          Add
-        </Button>
+        <MyCardFooter />
       </View>
     </View>
   );

@@ -24,10 +24,11 @@ const Otp = () => {
   const { setAuth } = useAuthStore();
   const navigation = useNavigation<RootStackNavigationProps>();
   const [timer, setTimer] = useState(60);
+  const isDisabled = timer > 0;
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (timer > 0) setTimer((prevTimer) => prevTimer - 1);
+      if (isDisabled) setTimer((prevTimer) => prevTimer - 1);
     }, 1000);
 
     return () => clearInterval(interval);
@@ -55,11 +56,11 @@ const Otp = () => {
       <View style={tw`flex-row items-start justify-center flex-1`}>
         <Text style={tw`body4 text-gray`}>Didn't recieve code?</Text>
         <Button
-          disabled={timer > 0}
+          disabled={isDisabled}
           onPress={() => setTimer(60)}
           textStyle={[
             tw`h4 text-primary`,
-            timer > 0 && tw`text-transparentPrimary`,
+            isDisabled && tw`text-transparentPrimary`,
           ]}
           containerStyle={tw`ml-1`}
         >

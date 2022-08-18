@@ -1,13 +1,11 @@
 import React from "react";
 import {
-  Image,
   StyleProp,
   Text,
   TouchableOpacity,
   TouchableOpacityProps,
   ViewStyle,
 } from "react-native";
-import { icons } from "../../../constants";
 import { tw } from "../../utils";
 
 enum ButtonVariant {
@@ -50,6 +48,8 @@ const Button = React.forwardRef<TouchableOpacity, ButtonProps>(
       borderRadius = "lg",
       isDarkBg = false,
       wrappedText = false,
+      // For override the style object
+      style,
       ...rest
     },
     ref

@@ -28,8 +28,17 @@ const AddCard = () => {
             style={tw`absolute right-5  w-[40px] h-[80px]`}
           />
         </ImageBackground>
+        {/* Card details */}
+        <View style={tw`absolute bottom-5 left-5`}>
+          <Text style={tw`text-white h4`}>Ali Salimli</Text>
+          <Text style={tw`text-white body4`}>1234 1234 1234 1234</Text>
+        </View>
+
+        <View style={tw`absolute bottom-5 right-5`}>
+          <Text style={tw`text-white body4`}>10/25</Text>
+        </View>
       </View>
-      <View style={tw`flex-1 bg-red`}>
+      <View style={tw`flex-1 `}>
         <Text>asd</Text>
       </View>
     </View>

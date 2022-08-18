@@ -1,16 +1,16 @@
 import create from "zustand";
 import { combine } from "zustand/middleware";
 import { constants } from "../../constants";
+import { ICard } from "../../constants/dummyData";
 
 const useCardsStore = create(
   combine(
     {
       // selected restuarant
-      selectedCardId: 0,
+      selectedCard: null,
     },
     (set) => ({
-      setselectedCardId: (cardId: number) =>
-        set(() => ({ selectedCardId: cardId })),
+      setselectedCard: (card: ICard) => set(() => ({ selectedCard: card })),
     })
   )
 );

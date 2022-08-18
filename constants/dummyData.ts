@@ -7,6 +7,12 @@ const myProfile = {
   address: "No. 88, Jln Padungan, Kuching",
 };
 
+export interface ICard {
+  id: number;
+  name: string;
+  icon: any;
+}
+
 const allCards = [
   {
     id: 1,
