@@ -1,17 +1,32 @@
 import React from "react";
-import { Text, View, StyleSheet, ScrollView, Image } from "react-native";
+import {
+  Text,
+  View,
+  StyleSheet,
+  ScrollView,
+  Image,
+  TouchableOpacity,
+} from "react-native";
 import { dummyData, icons } from "../../../constants";
+import useCardsStore from "../../store/useCardsStore";
 import { tw } from "../../utils";
 
 interface MyCardListProps {}
 
 const MyCardList = (props: MyCardListProps) => {
+  const { setSelectedCard, selectedCard } = useCardsStore();
+
   return (
     <ScrollView>
-      {dummyData.allCards.map(({ icon, id, name }, index) => {
-        const isSelected = index === 1;
+      {dummyData.allCards.map((card, index) => {
+        const { icon, id, name } = card;
+        const isSelected = selectedCard?.id === id;
         return (
-          <View
+          <TouchableOpacity
+            onPress={() => {
+              setSelectedCard(card);
+              console.log("yes", selectedCard);
+            }}
             style={[
               tw`flex-row justify-between rounded-lg p-4 mb-4`,
               !isSelected && tw`border border-lightGray1`,
@@ -38,7 +53,7 @@ const MyCardList = (props: MyCardListProps) => {
                 style={tw`w-18 h-18`}
               />
             )}
-          </View>
+          </TouchableOpacity>
         );
       })}
     </ScrollView>
