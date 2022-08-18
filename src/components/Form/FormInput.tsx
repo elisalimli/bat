@@ -29,7 +29,7 @@ const FormInput: React.FC<FormInputProps> = ({
   ...props
 }) => {
   return (
-    <View style={containerStyle}>
+    <View style={[containerStyle, tw`mb-2`]}>
       {/* Label and error msg */}
       <View style={tw`ml-2 mb-1`}>
         <Text style={tw`text-gray body4`}>{label}</Text>
