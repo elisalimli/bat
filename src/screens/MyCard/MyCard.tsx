@@ -18,7 +18,7 @@ const MyCard = () => {
         </Header.Left>
         <Header.Title>MY CARDS</Header.Title>
         <Header.Right>
-          <Text></Text>
+          <View style={tw`mr-6`}></View>
         </Header.Right>
       </Header>
       <View style={tw`flex-1 py-2 px-4`}>
