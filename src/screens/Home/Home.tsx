@@ -14,9 +14,6 @@ interface HomeProps {}
 const Home: React.FC<HomeProps> = () => {
   const navigation = useNavigation<any>();
 
-  const handlePressMenu = () => {
-    navigation.openDrawer();
-  };
   return (
     <HideKeyboard>
       <View style={tw`p-2 bg-white flex-1`}>

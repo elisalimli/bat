@@ -23,7 +23,7 @@ const HomeFoodCardItem: React.FC<HomeFoodCardItemProps> = ({
 }) => {
   return (
     <TouchableOpacity
-      onPress={() => navigation.push("MyCart")}
+      onPress={() => navigation.navigate("MyCart")}
       style={tw`flex-row my-4 h-40 `}
     >
       <Image source={image} style={tw`w-1/3 h-full mr-2`} />

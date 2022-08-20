@@ -16,7 +16,7 @@ const MyCardFooter = (props: MyCardFooterProps) => {
     <Button
       onPress={() => navigation.push("AddCard")}
       disabled={isDisabled}
-      containerStyle={[isDisabled && tw`bg-transparentPrimary`]}
+      containerStyle={[isDisabled && tw`bg-transparentPrimary`, tw`mt-4`]}
       variant="primary"
     >
       Add

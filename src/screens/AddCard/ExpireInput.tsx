@@ -1,12 +1,37 @@
 import React from "react";
 import { Text, View, StyleSheet, Image } from "react-native";
 
-import MaskInput, { Masks } from "react-native-mask-input";
+import MaskInput, { Mask, Masks } from "react-native-mask-input";
 import { icons } from "../../../constants";
 import FormInput from "../../components/Form/FormInput";
 import { tw } from "../../utils";
 
-const CardInput = () => {
+// 17/07/2022 -> 07/22
+const DATE_MMYY: Mask = (text = "") => {
+  const cleanText = text.replace(/\D+/g, "");
+
+  let secondDigitDayMask = /\d/;
+
+  if (cleanText.charAt(0) === "0") {
+    secondDigitDayMask = /[1-9]/;
+  }
+  if (cleanText.charAt(0) === "3") {
+    secondDigitDayMask = /[01]/;
+  }
+
+  let secondDigitMonthMask = /\d/;
+
+  if (cleanText.charAt(2) === "0") {
+    secondDigitMonthMask = /[1-9]/;
+  }
+  if (cleanText.charAt(2) === "1") {
+    secondDigitMonthMask = /[012]/;
+  }
+
+  return [/[0-3]/, secondDigitDayMask, "/", /[1-9]/, /[1-9]/];
+};
+
+const ExpireInput = () => {
   function renderInput() {
     const [phone, setPhone] = React.useState("");
     console.log("phone", phone);
@@ -22,16 +47,17 @@ const CardInput = () => {
           console.log(masked); // (99) 99999 9999
           console.log(unmasked); // 99999999999
         }}
-        mask={Masks.CREDIT_CARD}
+        mask={DATE_MMYY}
       />
     );
   }
   return (
     <FormInput
+      containerStyle={tw`flex-1 mr-4`}
       keyboardType="number-pad"
       maskedInput={renderInput}
-      label="Card number"
-      placeholder="1234123412341234"
+      label="Expire Date"
+      placeholder="07/25"
       suffixComponent={
         <Image style={tw`w-5 h-5 tint-green`} source={icons.correct} />
       }
@@ -39,4 +65,4 @@ const CardInput = () => {
   );
 };
 
-export default CardInput;
+export default ExpireInput;
