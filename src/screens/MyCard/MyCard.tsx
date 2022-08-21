@@ -23,10 +23,7 @@ const MyCard = () => {
         </Header.Right>
       </Header>
       <View style={tw`flex-1 py-2 px-4`}>
-        <ScrollView
-          showsVerticalScrollIndicator={false}
-          style={tw`flex-1 mb-8`}
-        >
+        <ScrollView showsVerticalScrollIndicator={false} style={tw`flex-1`}>
           {/* Card Header */}
           <Text style={tw`h3 ml-1 my-4`}>Add new card</Text>
           <MyCardList />

@@ -55,7 +55,7 @@ const SignIn = () => {
       </View>
       <View style={tw`mt-4 flex-1`}>
         <Button
-          onPress={() => navigation.push("Otp")}
+          onPress={() => navigation.navigate("Otp")}
           textStyle={tw`h3`}
           variant="primary"
         >
@@ -66,7 +66,7 @@ const SignIn = () => {
           <Button
             containerStyle={tw`ml-2`}
             textStyle={tw`text-primary`}
-            onPress={() => navigation.push("SignUp")}
+            onPress={() => navigation.navigate("SignUp")}
           >
             Sign up
           </Button>

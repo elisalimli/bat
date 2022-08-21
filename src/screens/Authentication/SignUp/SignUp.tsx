@@ -58,7 +58,7 @@ const SignUp = () => {
       </View>
       <View style={tw`mt-4 flex-1`}>
         <TouchableOpacity
-          onPress={() => navigation.push("Otp")}
+          onPress={() => navigation.navigate("Otp")}
           style={tw`bg-primary py-4 justify-center items-center rounded-2xl`}
         >
           <Text style={tw`text-white h3`}>Sign Up</Text>
@@ -66,7 +66,7 @@ const SignUp = () => {
         <View style={tw`flex-row justify-center items-center mt-4`}>
           <Text style={tw`text-gray body4`}>Already have an account ?</Text>
           <TouchableOpacity
-            onPress={() => navigation.push("SignIn")}
+            onPress={() => navigation.navigate("SignIn")}
             style={tw`ml-2`}
           >
             <Text style={tw`text-primary h4`}>Sign in</Text>

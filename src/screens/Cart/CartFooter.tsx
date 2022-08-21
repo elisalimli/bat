@@ -43,7 +43,7 @@ const CartFooter = () => {
           </View>
           <Button
             containerStyle={tw`mt-2`}
-            onPress={() => navigation.push("MyCard")}
+            onPress={() => navigation.navigate("MyCard")}
             variant="primary"
           >
             Place your order

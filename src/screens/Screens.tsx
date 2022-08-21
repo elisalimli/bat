@@ -21,12 +21,14 @@ import {
 } from "./Authentication";
 import CartTab from "./Cart/CartTab";
 import MyCard from "./MyCard/MyCard";
+import Success from "./Success/Success";
 
 export type RootStackParamList = {
   MainLayout: undefined;
   MyCart: undefined;
   MyCard: undefined;
   AddCard: undefined;
+  Success: undefined;
 } & AuthStackParamList &
   TabStackParamList;
 
@@ -68,6 +70,7 @@ const Screens = () => {
             <RootStack.Screen name="MyCart" component={CartTab} />
             <RootStack.Screen name="MyCard" component={MyCard} />
             <RootStack.Screen name="AddCard" component={AddCard} />
+            <RootStack.Screen name="Success" component={Success} />
           </RootStack.Group>
         ) : (
           <RootStack.Group>
