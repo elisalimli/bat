@@ -16,6 +16,7 @@ import { tw } from "../../utils";
 import { RootStackNavigationProps, RootStackParamList } from "../Screens";
 import Card from "./Card";
 import CardInput from "./CardInput";
+import CVVInput from "./CVVInput";
 import ExpireInput from "./ExpireInput";
 import RememberDetails from "./RememberDetails";
 const AddCard = () => {
@@ -40,30 +41,18 @@ const AddCard = () => {
         <CardInput />
         <FormInput
           label="Cardholder name"
-          placeholder="john"
+          placeholder="John"
+          autoCapitalize="words"
+          autoComplete="name"
           suffixComponent={
             <Image style={tw`w-5 h-5 tint-red`} source={icons.cancel} />
           }
         />
 
         <View style={tw`flex-row mt-2`}>
+          {/* Masked Input */}
           <ExpireInput />
-          {/* <FormInput
-            containerStyle={tw`flex-1 mr-4`}
-            label="Expiry date"
-            placeholder="7/25"
-            suffixComponent={
-              <Image style={tw`w-5 h-5 tint-green`} source={icons.correct} />
-            }
-          /> */}
-          <FormInput
-            containerStyle={tw`flex-1`}
-            label="CVV"
-            placeholder="123"
-            suffixComponent={
-              <Image style={tw`w-5 h-5 tint-green`} source={icons.correct} />
-            }
-          />
+          <CVVInput />
         </View>
         {/* Remember this card details */}
         <RememberDetails />

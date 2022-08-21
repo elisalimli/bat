@@ -31,7 +31,6 @@ const CardInput = () => {
       keyboardType="number-pad"
       maskedInput={renderInput}
       label="Card number"
-      placeholder="1234123412341234"
       suffixComponent={
         <Image style={tw`w-5 h-5 tint-green`} source={icons.correct} />
       }
