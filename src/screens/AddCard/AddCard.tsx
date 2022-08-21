@@ -4,6 +4,7 @@ import {
   Image,
   ImageBackground,
   Text,
+  TextInput,
   TouchableOpacity,
   View,
 } from "react-native";
@@ -19,6 +20,8 @@ import CardInput from "./CardInput";
 import CVVInput from "./CVVInput";
 import ExpireInput from "./ExpireInput";
 import RememberDetails from "./RememberDetails";
+// Formik x React Native example
+
 const AddCard = () => {
   const { selectedCard } = useCardsStore();
   const navigation = useNavigation<RootStackNavigationProps>();
@@ -60,7 +63,7 @@ const AddCard = () => {
           <Button
             variant="primary"
             textStyle={tw`text-base`}
-            onPress={() => navigation.navigate("Success")}
+            onPress={() => navigation.replace("Success")}
           >
             Done
           </Button>
