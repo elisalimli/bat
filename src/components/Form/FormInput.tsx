@@ -35,6 +35,11 @@ const FormInput: React.FC<FormInputProps> = ({
   const { setFieldValue } = useFormikContext();
   const [field, { error }] = useField(name);
 
+  const inputCommonProps = {
+    onChangeText: (masked: string) => setFieldValue(name, masked),
+    value: field.value,
+  };
+
   return (
     <View style={[containerStyle, tw`mb-2`]}>
       {/* Label and error msg */}
@@ -47,13 +52,13 @@ const FormInput: React.FC<FormInputProps> = ({
 
         <View style={tw`flex-1 flex-row items-center py-3`}>
           {maskedInputProps ? (
-            <MaskInput
-              {...maskedInputProps}
-              onChangeText={(masked: string) => setFieldValue(name, masked)}
-              value={field.value}
-            />
+            <MaskInput {...maskedInputProps} {...inputCommonProps} />
           ) : (
-            <TextInput style={tw`flex-1 body4`} {...props} />
+            <TextInput
+              style={tw`flex-1 body4`}
+              {...props}
+              {...inputCommonProps}
+            />
           )}
         </View>
 
