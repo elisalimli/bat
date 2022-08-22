@@ -14,32 +14,7 @@ import RememberDetails from "./RememberDetails";
 import { Formik } from "formik";
 import { Mask, Masks } from "react-native-mask-input";
 import type { IAddCardFormValues } from "./AddCard.types";
-
-// 17/07/2022 -> 07/22
-const DATE_MMYY: Mask = (text = "") => {
-  const cleanText = text.replace(/\D+/g, "");
-
-  let secondDigitDayMask = /\d/;
-
-  if (cleanText.charAt(0) === "0") {
-    secondDigitDayMask = /[1-9]/;
-  }
-  if (cleanText.charAt(0) === "3") {
-    secondDigitDayMask = /[01]/;
-  }
-
-  let secondDigitMonthMask = /\d/;
-
-  if (cleanText.charAt(2) === "0") {
-    secondDigitMonthMask = /[1-9]/;
-  }
-  if (cleanText.charAt(2) === "1") {
-    secondDigitMonthMask = /[012]/;
-  }
-
-  return [/[0-3]/, secondDigitDayMask, "/", /[1-9]/, /[1-9]/];
-};
-const CVV_MASK = [/[0-9]/, /[0-9]/, /[0-9]/];
+import { MY_MASK } from "./AddCardMasks";
 
 export const MyReactNativeForm = () => {
   const initialValues: IAddCardFormValues = {
@@ -92,7 +67,7 @@ export const MyReactNativeForm = () => {
                   value: "",
                   keyboardType: "number-pad",
                   placeholder: "07/25",
-                  mask: DATE_MMYY,
+                  mask: MY_MASK.DATE_MMYY,
                 }}
                 label="Expire Date"
                 suffixComponent={
@@ -110,7 +85,7 @@ export const MyReactNativeForm = () => {
                   value: "",
                   keyboardType: "number-pad",
                   placeholder: "123",
-                  mask: CVV_MASK,
+                  mask: MY_MASK.CVV_MASK,
                 }}
                 label="CVV"
                 suffixComponent={
