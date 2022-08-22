@@ -1,3 +1,4 @@
+import { useFormikContext } from "formik";
 import React from "react";
 import { Image, ImageBackground, View } from "react-native";
 import { images } from "../../../constants";
@@ -10,6 +11,7 @@ interface CardProps {}
 
 const Card = (props: CardProps) => {
   const { selectedCard } = useCardsStore();
+
   return (
     <View style={tw`p-2`}>
       {/* Card Icon */}

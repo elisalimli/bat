@@ -1,3 +1,4 @@
+import { useField, useFormikContext } from "formik";
 import React from "react";
 import {
   Text,
@@ -9,25 +10,31 @@ import {
   ViewStyle,
   StyleProp,
 } from "react-native";
+import MaskInput, { MaskInputProps } from "react-native-mask-input";
 import { icons } from "../../../constants";
 import { tw } from "../../utils";
 
 type FormInputProps = {
+  name: string;
   label: string;
   containerStyle?: StyleProp<ViewStyle>;
   prefixComponent?: React.ReactNode;
   suffixComponent?: React.ReactNode;
-  maskedInput?: () => React.ReactNode;
+  maskedInputProps?: MaskInputProps;
 } & TextInputProps;
 
 const FormInput: React.FC<FormInputProps> = ({
+  name,
   label,
   prefixComponent,
   suffixComponent,
   containerStyle,
-  maskedInput,
+  maskedInputProps,
   ...props
 }) => {
+  const { setFieldValue } = useFormikContext();
+  const [field, { error }] = useField(name);
+
   return (
     <View style={[containerStyle, tw`mb-2`]}>
       {/* Label and error msg */}
@@ -39,8 +46,12 @@ const FormInput: React.FC<FormInputProps> = ({
         {prefixComponent}
 
         <View style={tw`flex-1 flex-row items-center py-3`}>
-          {maskedInput ? (
-            maskedInput()
+          {maskedInputProps ? (
+            <MaskInput
+              {...maskedInputProps}
+              onChangeText={(masked: string) => setFieldValue(name, masked)}
+              value={field.value}
+            />
           ) : (
             <TextInput style={tw`flex-1 body4`} {...props} />
           )}
