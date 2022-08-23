@@ -20,6 +20,7 @@ import {
   Otp,
 } from "./Authentication";
 import CartTab from "./Cart/CartTab";
+import DeliveryStatus from "./Delivery/Delivery";
 import MyCard from "./MyCard/MyCard";
 import Success from "./Success/Success";
 
@@ -29,6 +30,7 @@ export type RootStackParamList = {
   MyCard: undefined;
   AddCard: undefined;
   Success: undefined;
+  DeliveryStatus: undefined;
 } & AuthStackParamList &
   TabStackParamList;
 
@@ -71,6 +73,10 @@ const Screens = () => {
             <RootStack.Screen name="MyCard" component={MyCard} />
             <RootStack.Screen name="AddCard" component={AddCard} />
             <RootStack.Screen name="Success" component={Success} />
+            <RootStack.Screen
+              name="DeliveryStatus"
+              component={DeliveryStatus}
+            />
           </RootStack.Group>
         ) : (
           <RootStack.Group>

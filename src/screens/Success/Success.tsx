@@ -32,7 +32,7 @@ const Success = (props: SuccessProps) => {
       </View>
       <View style={tw`p-2`}>
         <Button variant="primary" onPress={handlePress}>
-          Back to Home
+          View Delivery Status
         </Button>
       </View>
     </View>

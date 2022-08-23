@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Text, View } from "react-native";
 import { tw } from "../../utils";
 
@@ -8,16 +8,28 @@ interface IHeaderProps {
   Right: React.FC<{}>;
 }
 
-const Header: React.FC & IHeaderProps = ({ children }) => (
-  <View style={tw`flex-row items-center justify-between py-2`}>{children}</View>
+const Header: React.FC<{ children: React.ReactNode[] | React.ReactNode }> &
+  IHeaderProps = ({ children }) => (
+  <View style={tw`flex-row items-center justify-between py-2`}>
+    {/* Checking if the header exists in only one piece or multiple */}
+    {Array.isArray(children) ? (
+      <Fragment>
+        <View style={tw`flex-1`}>{children[0]}</View>
+        <View style={tw`flex-2 items-center justify-center`}>
+          {children[1]}
+        </View>
+        <View style={tw`flex-1 items-end`}>{children[2]}</View>
+      </Fragment>
+    ) : (
+      children
+    )}
+  </View>
 );
 const Left: React.FC = ({ children }) => (
   <View style={tw`ml-2`}>{children}</View>
 );
 const Title: React.FC = ({ children }) => (
-  <View style={tw`flex-1 justify-center items-center`}>
-    <Text style={tw`h3 font-medium`}>{children}</Text>
-  </View>
+  <Text style={tw`h3 font-medium`}>{children}</Text>
 );
 const Right: React.FC = ({ children }) => (
   <View style={tw`mr-2`}>{children}</View>
