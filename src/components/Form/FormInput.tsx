@@ -52,7 +52,11 @@ const FormInput: React.FC<FormInputProps> = ({
 
         <View style={tw`flex-1 flex-row items-center py-3`}>
           {maskedInputProps ? (
-            <MaskInput {...maskedInputProps} {...inputCommonProps} />
+            <MaskInput
+              style={[tw`flex-1`, maskedInputProps?.style]}
+              {...maskedInputProps}
+              {...inputCommonProps}
+            />
           ) : (
             <TextInput
               style={tw`flex-1 body4`}
