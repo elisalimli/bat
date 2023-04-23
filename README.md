@@ -158,7 +158,7 @@ Don't forget to give the project a star! Thanks again!
 <!-- CONTACT -->
 ## Contact
 
-Ali Salimli - [@elisalimli](https://twitter.com/elisalimli) - alisalimli0699@gmail.com
+Ali Salimli - [@elisalimli](https://twitter.com/elisalimli) - alisalimli.info@gmail.com
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
