@@ -1,8 +1,8 @@
-<!-- Improved compatibility of back to top link: See: https://github.com/alisalim17/bat/pull/73 -->
+<!-- Improved compatibility of back-to-top link: See: https://github.com/alisalim17/bat/pull/73 -->
 <a name="readme-top"></a>
 <!--
 *** Thanks for checking out the bat. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
+*** That would make this better, please fork the repo and create a pull request
 *** or simply open an issue with the tag "enhancement".
 *** Don't forget to give the project a star!
 *** Thanks again! Now go create something AMAZING! :D
@@ -142,7 +142,7 @@ See the [open issues](https://github.com/alisalim17/bat/issues) for a full list 
 <!-- CONTRIBUTING -->
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Contributions are what makes the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
 If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
 Don't forget to give the project a star! Thanks again!
@@ -169,7 +169,7 @@ Ali Salimli - [@elisalimli](https://twitter.com/elisalimli) - alisalimli.info@gm
 
 
 ## Note
-Design doesn't belong to me, check the youtube video => https://www.youtube.com/watch?v=diUDjNwZ8Lg&ab_channel=ByProgrammers
+The design doesn't belong to me => https://dribbble.com/shots/14527824-Food-Delivery-Mobile-App
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
